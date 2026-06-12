@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Login | Namhohind Bihar GK</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body data-page="login" class="portal-page">
+    <main class="portal-auth-layout">
+        <section class="portal-brand-panel" aria-label="Namhohind Bihar GK Learning Hub">
+            <a class="portal-logo" href="index.html">
+                <img src="bihar-logo.png" alt="Bihar logo">
+                <span><strong>Namhohind</strong><small>Bihar GK Learning Hub</small></span>
+            </a>
+            <div class="portal-welcome">
+                <p>Government CBT Style Exam Portal</p>
+                <h1>Welcome to Namhohind Bihar GK Learning Hub</h1>
+                <span>Practice Bihar exams with secure login, subject performance, score history, and live leaderboards.</span>
+            </div>
+            <div class="portal-stats" aria-label="Platform statistics">
+                <div><strong>5</strong><span>Exam Subjects</span></div>
+                <div><strong>CBT</strong><span>Practice Mode</span></div>
+                <div><strong>24x7</strong><span>Local Access</span></div>
+            </div>
+        </section>
+
+        <section class="portal-form-panel">
+            <form class="portal-card" id="loginForm">
+                <div class="portal-card-heading">
+                    <span>Candidate Access</span>
+                    <h2>Login</h2>
+                    <p>Use your username and password to continue to your dashboard.</p>
+                </div>
+
+                <label for="loginUsername">Username</label>
+                <input id="loginUsername" autocomplete="username" required>
+
+                <label for="loginPassword">Password</label>
+                <input id="loginPassword" type="password" autocomplete="current-password" required>
+
+                <button class="exam-btn primary portal-submit" type="submit">Login to Dashboard</button>
+                <p class="form-message" id="loginMessage" aria-live="polite"></p>
+
+                <div class="auth-actions">
+                    <a class="exam-btn light" href="signup.html">Create Account</a>
+                    <a class="exam-btn outline" href="forgot-password.html">Forgot Password</a>
+                </div>
+                <a class="portal-back-link" href="quiz.html">Continue to quiz as guest</a>
+            </form>
+        </section>
+    </main>
+    <script src="quiz.js"></script>
+</body>
+</html>

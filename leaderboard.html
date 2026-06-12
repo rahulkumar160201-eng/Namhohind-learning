@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard | Namhohind Bihar GK</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body data-page="leaderboard">
+    <header class="site-header exam-site-header">
+        <a class="brand" href="index.html">
+            <img src="bihar-logo.png" alt="Bihar logo">
+            <span><strong>Namhohind</strong><small>Bihar GK Learning Hub</small></span>
+        </a>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="quiz.html">Quiz</a>
+            <a class="active" href="leaderboard.html">Leaderboard</a>
+        </nav>
+    </header>
+
+    <main class="exam-shell leaderboard-wrap wide-wrap">
+        <section class="leaderboard-card wide-card">
+            <div class="panel-heading">
+                <div>
+                    <p class="exam-kicker">Subject Wise Ranking</p>
+                    <h1>Namhohind Leaderboard</h1>
+                    <p class="small-note">Only candidates who attempted at least one quiz are shown.</p>
+                </div>
+                <a class="exam-btn primary" href="quiz.html">Start Quiz</a>
+            </div>
+
+            <div class="leaderboard-filter">
+                <label class="sr-only" for="leaderboardSubject">Select leaderboard subject</label>
+                <select id="leaderboardSubject" aria-label="Select leaderboard subject"></select>
+            </div>
+
+            <div class="table-scroll">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Candidate Name</th>
+                            <th>Candidate ID</th>
+                            <th>Score</th>
+                            <th>Tests Attempted</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboardBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="quiz.js"></script>
+</body>
+</html>

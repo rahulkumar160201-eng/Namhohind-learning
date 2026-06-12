@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Namhohind Bihar GK</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="feedback.css">
+    <style>
+        .admin-login-container { max-width: 400px; margin: 100px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .admin-login-container h2 { text-align: center; margin-bottom: 20px; color: var(--blue-950, #061a38); }
+        .admin-login-container input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; }
+        .admin-dashboard-container { display: none; padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
+        .admin-mode-active .admin-dashboard-container { display: block; }
+        .admin-mode-active .admin-login-container { display: none; }
+        .admin-header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+    </style>
+</head>
+<body data-page="admin">
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <img src="bihar-logo.png" alt="Bihar logo">
+            <span><strong>Namhohind</strong><small>Admin Panel</small></span>
+        </a>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="feedback.html">Public Feedback</a>
+            <button id="adminLogoutBtn" class="btn btn-light" style="display:none; padding: 8px 15px; cursor:pointer;">Logout</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="admin-login-container" id="adminLoginContainer">
+            <h2>Admin Login</h2>
+            <form id="adminLoginForm">
+                <input type="text" id="adminUsername" placeholder="Username" required>
+                <input type="password" id="adminPassword" placeholder="Password" required>
+                <button type="submit" class="btn btn-primary w-full">Login</button>
+                <p id="adminLoginError" style="color: #c62828; text-align: center; margin-top: 15px; display: none; font-weight: bold;">Invalid credentials</p>
+            </form>
+        </div>
+
+        <div class="admin-dashboard-container" id="adminDashboardContainer">
+            <div class="admin-header-flex">
+                <h1 style="color: var(--blue-950, #061a38);">Feedback Moderation</h1>
+            </div>
+            <div id="reviewsList" class="reviews-list">
+                <!-- Reviews populated by JS -->
+            </div>
+        </div>
+    </main>
+    <script src="feedback.js"></script>
+</body>
+</html>

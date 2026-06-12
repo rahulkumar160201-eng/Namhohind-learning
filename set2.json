@@ -1,0 +1,411 @@
+{
+  "set_id": "bpsc-mock-set-2",
+  "subject": "BPSC Mock Test",
+  "set_number": 2,
+  "total_questions": 25,
+  "total_marks": 25,
+  "duration_minutes": 30,
+  "language": "Hindi-English",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Bihar History",
+      "difficulty": "Advanced",
+      "question_hi": "1913 में पटना में अनुशीलन समिति की एक शाखा की स्थापना किसने की थी?",
+      "question_en": "Who established a branch of the Anushilan Samiti in Patna in 1913?",
+      "options": {
+        "A": "रामानंद तिवारी / Ramanand Tiwari",
+        "B": "शचीन्द्रनाथ सान्याल / Sachindra Nath Sanyal",
+        "C": "बंकिम चंद्र मित्रा / Bankim Chandra Mitra",
+        "D": "रेवती नाग / Rewati Nag"
+      },
+      "answer": "B",
+      "explanation_hi": "क्रांतिकारी गतिविधियों को संगठित करने के लिए शचीन्द्रनाथ सान्याल ने 1913 में पटना में अनुशीलन समिति की शाखा स्थापित की थी।",
+      "explanation_en": "Sachindra Nath Sanyal established the branch of the Anushilan Samiti in Patna in 1913 to organize revolutionary activities."
+    },
+    {
+      "id": 2,
+      "topic": "Bihar Geography",
+      "difficulty": "Medium",
+      "question_hi": "त्रिवेणी नहर को निम्नलिखित में से किस नदी से पानी मिलता है?",
+      "question_en": "The Triveni Canal receives water from which of the following rivers?",
+      "options": {
+        "A": "सोन / Son",
+        "B": "कोसी / Kosi",
+        "C": "गंडक / Gandak",
+        "D": "मयूराक्षी / Mayurakshi"
+      },
+      "answer": "C",
+      "explanation_hi": "त्रिवेणी नहर बिहार के उत्तर-पश्चिमी भाग (पश्चिम चंपारण) में गंडक नदी से निकाली गई है।",
+      "explanation_en": "The Triveni Canal is drawn from the Gandak river in the north-western part of Bihar (West Champaran)."
+    },
+    {
+      "id": 3,
+      "topic": "Indian Polity",
+      "difficulty": "Advanced",
+      "question_hi": "भारतीय संविधान के किस अनुच्छेद के तहत नियंत्रक एवं महालेखा परीक्षक (CAG) की नियुक्ति की जाती है?",
+      "question_en": "Under which Article of the Indian Constitution is the Comptroller and Auditor General (CAG) appointed?",
+      "options": {
+        "A": "अनुच्छेद 148 / Article 148",
+        "B": "अनुच्छेद 156 / Article 156",
+        "C": "अनुच्छेद 280 / Article 280",
+        "D": "अनुच्छेद 315 / Article 315"
+      },
+      "answer": "A",
+      "explanation_hi": "संविधान का अनुच्छेद 148 भारत के नियंत्रक और महालेखा परीक्षक (CAG) के एक स्वतंत्र पद का प्रावधान करता है।",
+      "explanation_en": "Article 148 of the Constitution provides for an independent office of the Comptroller and Auditor General (CAG) of India."
+    },
+    {
+      "id": 4,
+      "topic": "Economy",
+      "difficulty": "Medium",
+      "question_hi": "बिहार आर्थिक सर्वेक्षण के अनुसार, बिहार के किस जिले की प्रति व्यक्ति आय सबसे अधिक है?",
+      "question_en": "According to the Bihar Economic Survey, which district of Bihar has the highest per capita income?",
+      "options": {
+        "A": "बेगूसराय / Begusarai",
+        "B": "मुंगेर / Munger",
+        "C": "पटना / Patna",
+        "D": "रोहतास / Rohtas"
+      },
+      "answer": "C",
+      "explanation_hi": "पटना जिला बिहार में सबसे अधिक प्रति व्यक्ति आय वाला जिला है, इसके बाद बेगूसराय और मुंगेर का स्थान आता है।",
+      "explanation_en": "Patna district has the highest per capita income in Bihar, followed by Begusarai and Munger."
+    },
+    {
+      "id": 5,
+      "topic": "Science",
+      "difficulty": "Advanced",
+      "question_hi": "विटामिन B12 का रासायनिक नाम क्या है?",
+      "question_en": "What is the chemical name of Vitamin B12?",
+      "options": {
+        "A": "राइबोफ्लेविन / Riboflavin",
+        "B": "साइनोकोबालामिन / Cyanocobalamin",
+        "C": "थायमिन / Thiamine",
+        "D": "नियासिन / Niacin"
+      },
+      "answer": "B",
+      "explanation_hi": "विटामिन B12 का रासायनिक नाम साइनोकोबालामिन है और इसमें कोबाल्ट धातु पाई जाती है।",
+      "explanation_en": "The chemical name of Vitamin B12 is Cyanocobalamin, and it contains the metal Cobalt."
+    },
+    {
+      "id": 6,
+      "topic": "Indian History",
+      "difficulty": "Advanced",
+      "question_hi": "1928 में पटना में साइमन कमीशन के बहिष्कार का नेतृत्व किसने किया था?",
+      "question_en": "Who led the boycott of the Simon Commission in Patna in 1928?",
+      "options": {
+        "A": "डॉ. राजेंद्र प्रसाद / Dr. Rajendra Prasad",
+        "B": "अनुग्रह नारायण सिन्हा / Anugrah Narayan Sinha",
+        "C": "जयप्रकाश नारायण / Jayaprakash Narayan",
+        "D": "अली इमाम / Ali Imam"
+      },
+      "answer": "B",
+      "explanation_hi": "अनुग्रह नारायण सिन्हा ने 1928 में पटना में साइमन कमीशन के खिलाफ बड़े पैमाने पर छात्र और युवा प्रदर्शनों का सफलतापूर्वक नेतृत्व किया था।",
+      "explanation_en": "Anugrah Narayan Sinha successfully led large-scale student and youth demonstrations against the Simon Commission in Patna in 1928."
+    },
+    {
+      "id": 7,
+      "topic": "Bihar Geography",
+      "difficulty": "Medium",
+      "question_hi": "2011 की जनगणना के अनुसार बिहार के किस जिले का लिंगानुपात (Sex Ratio) सबसे अधिक है?",
+      "question_en": "Which district of Bihar has the highest sex ratio according to the 2011 Census?",
+      "options": {
+        "A": "सीवान / Siwan",
+        "B": "गोपालगंज / Gopalganj",
+        "C": "सारण / Saran",
+        "D": "किशनगंज / Kishanganj"
+      },
+      "answer": "B",
+      "explanation_hi": "गोपालगंज जिले में बिहार में सबसे अधिक लिंगानुपात (1021 महिलाएँ प्रति 1000 पुरुष) दर्ज किया गया था।",
+      "explanation_en": "Gopalganj district recorded the highest sex ratio in Bihar (1021 females per 1000 males)."
+    },
+    {
+      "id": 8,
+      "topic": "Ancient History",
+      "difficulty": "Advanced",
+      "question_hi": "मिथिला के कर्नाट वंश का संस्थापक कौन था?",
+      "question_en": "Who was the founder of the Karnata dynasty of Mithila?",
+      "options": {
+        "A": "नान्यदेव / Nanyadeva",
+        "B": "नरसिंहदेव / Narasimhadeva",
+        "C": "हरिसिंहदेव / Harisimhadeva",
+        "D": "महेश ठाकुर / Mahesh Thakkura"
+      },
+      "answer": "A",
+      "explanation_hi": "नान्यदेव ने 1097 ई. में कर्नाट वंश की स्थापना की थी। इस वंश का शासनकाल मिथिला का 'स्वर्ण युग' माना जाता है।",
+      "explanation_en": "Nanyadeva founded the Karnata dynasty in 1097 CE. Their rule is considered the 'Golden Age' of Mithila."
+    },
+    {
+      "id": 9,
+      "topic": "Indian Polity",
+      "difficulty": "Medium",
+      "question_hi": "भारतीय संविधान में 'समवर्ती सूची' (Concurrent List) की अवधारणा किस देश से ली गई है?",
+      "question_en": "The concept of the 'Concurrent List' in the Indian Constitution is borrowed from which country?",
+      "options": {
+        "A": "कनाडा / Canada",
+        "B": "आयरलैंड / Ireland",
+        "C": "ऑस्ट्रेलिया / Australia",
+        "D": "अमेरिका / USA"
+      },
+      "answer": "C",
+      "explanation_hi": "समवर्ती सूची, व्यापार-वाणिज्य की स्वतंत्रता और संसद की संयुक्त बैठक का प्रावधान ऑस्ट्रेलिया के संविधान से लिया गया है।",
+      "explanation_en": "The Concurrent list, freedom of trade, and joint sitting of Parliament are borrowed from the Australian Constitution."
+    },
+    {
+      "id": 10,
+      "topic": "Environment",
+      "difficulty": "Easy",
+      "question_hi": "नागी-नकटी पक्षी अभयारण्य (Nagi-Nakti Bird Sanctuary) बिहार के किस जिले में स्थित है?",
+      "question_en": "Nagi-Nakti Bird Sanctuary is located in which district of Bihar?",
+      "options": {
+        "A": "जमुई / Jamui",
+        "B": "बेगूसराय / Begusarai",
+        "C": "कटिहार / Katihar",
+        "D": "वैशाली / Vaishali"
+      },
+      "answer": "A",
+      "explanation_hi": "नागी और नकटी पक्षी अभयारण्य जमुई जिले में स्थित हैं और प्रवासी पक्षियों के लिए प्रसिद्ध हैं।",
+      "explanation_en": "Nagi and Nakti Bird Sanctuaries are located in Jamui district and are famous for migratory birds."
+    },
+    {
+      "id": 11,
+      "topic": "Science",
+      "difficulty": "Advanced",
+      "question_hi": "काला-अजार (Kala-azar) निम्नलिखित में से किसके काटने से फैलता है?",
+      "question_en": "Kala-azar is transmitted by the bite of which of the following?",
+      "options": {
+        "A": "एनाफिलीज मच्छर / Anopheles mosquito",
+        "B": "क्यूलेक्स मच्छर / Culex mosquito",
+        "C": "सैंडफ्लाई (बालू मक्खी) / Sandfly",
+        "D": "त्से-त्से मक्खी / Tsetse fly"
+      },
+      "answer": "C",
+      "explanation_hi": "काला-अजार एक परजीवी बीमारी है जो लीशमैनिया डोनोवानी के कारण होती है और संक्रमित बालू मक्खी (Sandfly) के काटने से फैलती है।",
+      "explanation_en": "Kala-azar is a parasitic disease caused by Leishmania donovani and transmitted by the bite of an infected Sandfly."
+    },
+    {
+      "id": 12,
+      "topic": "Modern History",
+      "difficulty": "Medium",
+      "question_hi": "बिहार सोशलिस्ट पार्टी का औपचारिक गठन किस वर्ष किया गया था?",
+      "question_en": "In which year was the Bihar Socialist Party formally formed?",
+      "options": {
+        "A": "1929",
+        "B": "1931",
+        "C": "1934",
+        "D": "1939"
+      },
+      "answer": "B",
+      "explanation_hi": "जयप्रकाश नारायण, फूलन प्रसाद वर्मा और कुछ अन्य नेताओं द्वारा 1931 में बिहार सोशलिस्ट पार्टी का गठन किया गया था।",
+      "explanation_en": "The Bihar Socialist Party was formed in 1931 by Jayaprakash Narayan, Phulan Prasad Varma, and a few other leaders."
+    },
+    {
+      "id": 13,
+      "topic": "Bihar Geography",
+      "difficulty": "Advanced",
+      "question_hi": "बिहार में पाई जाने वाली 'करैल-कवाल' (Karel-Kewal) किस प्रकार की मिट्टी है?",
+      "question_en": "What type of soil is 'Karel-Kewal' found in Bihar?",
+      "options": {
+        "A": "पुरानी जलोढ़ मिट्टी (बांगर) / Old Alluvial Soil (Bangar)",
+        "B": "नई जलोढ़ मिट्टी (खादर) / New Alluvial Soil (Khadar)",
+        "C": "लाल रेतीली मिट्टी / Red Sandy Soil",
+        "D": "लेटराइट मिट्टी / Laterite Soil"
+      },
+      "answer": "A",
+      "explanation_hi": "करैल-कवाल पुरानी जलोढ़ (बांगर) मिट्टी का एक रूप है जो मुख्य रूप से दक्षिण बिहार के मैदानी इलाकों (रोहतास से भागलपुर तक) में पाई जाती है।",
+      "explanation_en": "Karel-Kewal is a form of old alluvial (Bangar) soil mainly found in the South Bihar plains (from Rohtas to Bhagalpur)."
+    },
+    {
+      "id": 14,
+      "topic": "Indian Polity",
+      "difficulty": "Medium",
+      "question_hi": "राज्य के महाधिवक्ता (Advocate General) की नियुक्ति कौन करता है?",
+      "question_en": "Who appoints the Advocate General of a State?",
+      "options": {
+        "A": "भारत के राष्ट्रपति / President of India",
+        "B": "मुख्यमंत्री / Chief Minister",
+        "C": "राज्य के राज्यपाल / Governor of the State",
+        "D": "उच्च न्यायालय के मुख्य न्यायाधीश / Chief Justice of High Court"
+      },
+      "answer": "C",
+      "explanation_hi": "संविधान के अनुच्छेद 165 के तहत, राज्य के महाधिवक्ता की नियुक्ति उस राज्य के राज्यपाल द्वारा की जाती है।",
+      "explanation_en": "Under Article 165 of the Constitution, the Advocate General of a state is appointed by the Governor of that state."
+    },
+    {
+      "id": 15,
+      "topic": "Government Schemes",
+      "difficulty": "Medium",
+      "question_hi": "बिहार सरकार द्वारा 'सात निश्चय' (Saat Nischay) भाग-1 योजना कब शुरू की गई थी?",
+      "question_en": "When was the 'Saat Nischay' (Seven Resolves) part-1 scheme launched by the Bihar Government?",
+      "options": {
+        "A": "2014",
+        "B": "2015",
+        "C": "2016",
+        "D": "2017"
+      },
+      "answer": "B",
+      "explanation_hi": "विकास को गति देने के लिए बिहार सरकार ने सुशासन के कार्यक्रम (2015-2020) के तहत 2015 में 'सात निश्चय' योजना लागू की थी।",
+      "explanation_en": "To accelerate development, the Bihar government launched the 'Saat Nischay' scheme in 2015 under the program of good governance (2015-2020)."
+    },
+    {
+      "id": 16,
+      "topic": "Medieval History",
+      "difficulty": "Advanced",
+      "question_hi": "किस मुगल सम्राट का राज्याभिषेक पटना में हुआ था?",
+      "question_en": "Which Mughal emperor was crowned in Patna?",
+      "options": {
+        "A": "जहांदार शाह / Jahandar Shah",
+        "B": "फर्रुखसियर / Farrukhsiyar",
+        "C": "शाह आलम द्वितीय / Shah Alam II",
+        "D": "औरंगजेब / Aurangzeb"
+      },
+      "answer": "B",
+      "explanation_hi": "फर्रुखसियर पहला मुगल सम्राट था जिसका औपचारिक रूप से 1713 में पटना में राज्याभिषेक हुआ था।",
+      "explanation_en": "Farrukhsiyar was the first Mughal emperor who was formally crowned in Patna in 1713."
+    },
+    {
+      "id": 17,
+      "topic": "Bihar Geography",
+      "difficulty": "Easy",
+      "question_hi": "प्रसिद्ध 'ककोलत जलप्रपात' (Kakolat Waterfall) बिहार के किस जिले में स्थित है?",
+      "question_en": "The famous 'Kakolat Waterfall' is located in which district of Bihar?",
+      "options": {
+        "A": "गया / Gaya",
+        "B": "नवादा / Nawada",
+        "C": "रोहतास / Rohtas",
+        "D": "कैमूर / Kaimur"
+      },
+      "answer": "B",
+      "explanation_hi": "ककोलत जलप्रपात बिहार के नवादा जिले में एक लोकप्रिय प्राकृतिक जलप्रपात और पर्यटन स्थल है।",
+      "explanation_en": "Kakolat Waterfall is a popular natural waterfall and tourist destination in the Nawada district of Bihar."
+    },
+    {
+      "id": 18,
+      "topic": "Science",
+      "difficulty": "Medium",
+      "question_hi": "मानव शरीर में 'लड़ो या उड़ो' (Fight or flight) प्रतिक्रिया के लिए कौन सा हार्मोन जिम्मेदार है?",
+      "question_en": "Which hormone is responsible for the 'fight or flight' response in the human body?",
+      "options": {
+        "A": "इंसुलिन / Insulin",
+        "B": "मेलाटोनिन / Melatonin",
+        "C": "एड्रेनालाईन (एपिनेफ्रीन) / Adrenaline",
+        "D": "थायरोक्सिन / Thyroxine"
+      },
+      "answer": "C",
+      "explanation_hi": "एड्रेनालाईन, जो एड्रेनल ग्रंथियों द्वारा निर्मित होता है, तनाव के समय शरीर को 'लड़ो या भागो' प्रतिक्रिया के लिए तैयार करता है।",
+      "explanation_en": "Adrenaline, produced by the adrenal glands, prepares the body for the 'fight or flight' response during stress."
+    },
+    {
+      "id": 19,
+      "topic": "Indian Polity",
+      "difficulty": "Easy",
+      "question_hi": "भारत की संविधान सभा के स्थायी अध्यक्ष (Permanent President) कौन थे?",
+      "question_en": "Who was the permanent President of the Constituent Assembly of India?",
+      "options": {
+        "A": "डॉ. बी. आर. अंबेडकर / Dr. B. R. Ambedkar",
+        "B": "डॉ. सच्चिदानंद सिन्हा / Dr. Sachchidananda Sinha",
+        "C": "डॉ. राजेंद्र प्रसाद / Dr. Rajendra Prasad",
+        "D": "जवाहरलाल नेहरू / Jawaharlal Nehru"
+      },
+      "answer": "C",
+      "explanation_hi": "डॉ. राजेंद्र प्रसाद को 11 दिसंबर 1946 को संविधान सभा का स्थायी अध्यक्ष चुना गया था।",
+      "explanation_en": "Dr. Rajendra Prasad was elected as the permanent President of the Constituent Assembly on December 11, 1946."
+    },
+    {
+      "id": 20,
+      "topic": "Bihar History",
+      "difficulty": "Advanced",
+      "question_hi": "बिहार में 'सर्चलाइट' (Searchlight) समाचार पत्र किसके द्वारा शुरू किया गया था?",
+      "question_en": "By whom was the 'Searchlight' newspaper started in Bihar?",
+      "options": {
+        "A": "सच्चिदानंद सिन्हा और हसन इमाम / Sachchidananda Sinha & Hasan Imam",
+        "B": "मजहर-उल-हक / Mazhar-ul-Haq",
+        "C": "डॉ. राजेंद्र प्रसाद / Dr. Rajendra Prasad",
+        "D": "अली इमाम / Ali Imam"
+      },
+      "answer": "A",
+      "explanation_hi": "प्रसिद्ध अंग्रेजी समाचार पत्र 'सर्चलाइट' का प्रकाशन 1918 में सच्चिदानंद सिन्हा और सैयद हसन इमाम द्वारा शुरू किया गया था।",
+      "explanation_en": "The famous English newspaper 'Searchlight' was started in 1918 by Sachchidananda Sinha and Syed Hasan Imam."
+    },
+    {
+      "id": 21,
+      "topic": "Science",
+      "difficulty": "Medium",
+      "question_hi": "निम्नलिखित में से कौन सा एल्युमिनियम का प्रमुख अयस्क है?",
+      "question_en": "Which of the following is a major ore of Aluminium?",
+      "options": {
+        "A": "हेमेटाइट / Hematite",
+        "B": "बॉक्साइट / Bauxite",
+        "C": "गैलेना / Galena",
+        "D": "सिनाबार / Cinnabar"
+      },
+      "answer": "B",
+      "explanation_hi": "एल्युमिनियम मुख्य रूप से बॉक्साइट अयस्क से प्राप्त किया जाता है। (हेमेटाइट लोहे का है, गैलेना सीसे का है)।",
+      "explanation_en": "Aluminium is primarily extracted from Bauxite ore. (Hematite is iron, Galena is lead)."
+    },
+    {
+      "id": 22,
+      "topic": "Economy",
+      "difficulty": "Advanced",
+      "question_hi": "ग्रामीण विकास के लिए 'PURA' (Providing Urban Amenities to Rural Areas) मॉडल की वकालत किसने की थी?",
+      "question_en": "The 'PURA' (Providing Urban Amenities to Rural Areas) model for rural development was advocated by whom?",
+      "options": {
+        "A": "अमर्त्य सेन / Amartya Sen",
+        "B": "ए. पी. जे. अब्दुल कलाम / A. P. J. Abdul Kalam",
+        "C": "मनमोहन सिंह / Manmohan Singh",
+        "D": "एम. एस. स्वामीनाथन / M. S. Swaminathan"
+      },
+      "answer": "B",
+      "explanation_hi": "भारत के पूर्व राष्ट्रपति डॉ. ए.पी.जे. अब्दुल कलाम ने गांवों से शहरों की ओर पलायन रोकने के लिए PURA मॉडल का प्रस्ताव दिया था।",
+      "explanation_en": "Former President of India Dr. A.P.J. Abdul Kalam proposed the PURA model to check migration from villages to cities."
+    },
+    {
+      "id": 23,
+      "topic": "Ancient History",
+      "difficulty": "Medium",
+      "question_hi": "द्वितीय बौद्ध संगीति कहाँ आयोजित की गई थी?",
+      "question_en": "Where was the Second Buddhist Council held?",
+      "options": {
+        "A": "राजगृह / Rajagriha",
+        "B": "वैशाली / Vaishali",
+        "C": "पाटलिपुत्र / Pataliputra",
+        "D": "कुंडलवन / Kundalavana"
+      },
+      "answer": "B",
+      "explanation_hi": "दूसरी बौद्ध संगीति 383 ईसा पूर्व में कालाशोक (शिशुनाग वंश) के शासनकाल के दौरान वैशाली में आयोजित की गई थी।",
+      "explanation_en": "The Second Buddhist Council was held at Vaishali in 383 BCE during the reign of Kalashoka (Shishunaga dynasty)."
+    },
+    {
+      "id": 24,
+      "topic": "Bihar Geography",
+      "difficulty": "Advanced",
+      "question_hi": "बिहार का सबसे पूर्वी जिला (Easternmost District) कौन सा है?",
+      "question_en": "Which is the easternmost district of Bihar?",
+      "options": {
+        "A": "कटिहार / Katihar",
+        "B": "पूर्णिया / Purnia",
+        "C": "किशनगंज / Kishanganj",
+        "D": "अररिया / Araria"
+      },
+      "answer": "C",
+      "explanation_hi": "किशनगंज बिहार का सबसे पूर्वी जिला है, जो पश्चिम बंगाल के साथ सीमा साझा करता है।",
+      "explanation_en": "Kishanganj is the easternmost district of Bihar, sharing its border with West Bengal."
+    },
+    {
+      "id": 25,
+      "topic": "Indian Polity",
+      "difficulty": "Advanced",
+      "question_hi": "भारत में त्रिस्तरीय पंचायती राज व्यवस्था का उद्घाटन किस वर्ष किया गया था?",
+      "question_en": "In which year was the three-tier Panchayati Raj System inaugurated in India?",
+      "options": {
+        "A": "1952",
+        "B": "1957",
+        "C": "1959",
+        "D": "1962"
+      },
+      "answer": "C",
+      "explanation_hi": "प्रधानमंत्री जवाहरलाल नेहरू ने 2 अक्टूबर 1959 को नागौर, राजस्थान में पंचायती राज व्यवस्था का उद्घाटन किया था।",
+      "explanation_en": "PM Jawaharlal Nehru inaugurated the Panchayati Raj system in Nagaur, Rajasthan on October 2, 1959."
+    }
+  ]
+}

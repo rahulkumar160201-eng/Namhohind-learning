@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional CBT style Bihar exam practice quiz for Namhohind Bihar GK.">
+    <title>Online Exam | Namhohind Bihar GK</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body data-page="quiz">
+    <header class="site-header exam-site-header">
+        <a class="brand" href="index.html" aria-label="Namhohind Bihar GK home">
+            <img src="bihar-logo.png" alt="Bihar logo">
+            <span>
+                <strong>Namhohind</strong>
+                <small>Bihar GK Learning Hub</small>
+            </span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="bihar-gk-page1.html">Bihar GK</a>
+            <a href="current-affairs.html">Current Affairs</a>
+            <a class="active" href="quiz.html">Quiz</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="leaderboard.html">Leaderboard</a>
+        </nav>
+    </header>
+
+    <main class="exam-shell">
+        <section id="quizDashboard" class="exam-dashboard" aria-labelledby="dashboardTitle">
+            <div class="exam-title-block">
+                <p class="exam-kicker">Namhohind Bihar Exam Practice Platform</p>
+                <h1 id="dashboardTitle">Online CBT Mock Test</h1>
+                <p>Select a subject and topic to start a timed government-exam style quiz.</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <form class="exam-card quiz-form" id="quizSetupForm">
+                    <h2 id="quizSetupTitle" style="margin-top:0; color:var(--bihar-blue);">Select Set</h2>
+                    <p id="quizSetupDesc" style="margin-bottom:20px; color:#666;">Choose a practice set to begin.</p>
+                    
+                    <input type="hidden" id="subjectSelect">
+                    <label for="topicSelect">Select Set</label>
+                    <select id="topicSelect" required></select>
+
+                    <div class="exam-summary" aria-label="Quiz details">
+                        <div><span>Total Questions</span><strong id="totalQuestions">0</strong></div>
+                        <div><span>Total Marks</span><strong id="totalMarks">0</strong></div>
+                        <div><span>Time Duration</span><strong id="timeDuration">0 Min</strong></div>
+                        <div><span>Exam Mode</span><strong>CBT</strong></div>
+                    </div>
+
+                    <button class="exam-btn primary" type="submit">Start Quiz</button>
+                </form>
+
+                <aside class="exam-card user-card">
+                    <h2>Candidate Panel</h2>
+                    <div class="candidate-mini">
+                        <p><span>Candidate Name</span><strong id="candidateName">Guest User</strong></p>
+                        <p><span>Candidate ID</span><strong id="candidateId">N/A</strong></p>
+                        <p><span>Date of Birth</span><strong id="candidateDob">N/A</strong></p>
+                        <p><span>Current Rank</span><strong id="candidateRank">N/A</strong></p>
+                        <p><span>Total Score</span><strong id="candidateScore">0</strong></p>
+                        <p><span>Tests Attempted</span><strong id="candidateTests">0</strong></p>
+                    </div>
+                    <div class="auth-actions" id="guestActions">
+                        <a class="exam-btn light" href="login.html">Login</a>
+                        <a class="exam-btn outline" href="signup.html">Signup</a>
+                    </div>
+                    <div class="auth-actions hidden" id="loggedInActions">
+                        <a class="exam-btn light" href="quiz-dashboard.html">Dashboard</a>
+                        <button class="exam-btn outline" id="logoutBtn" type="button">Logout</button>
+                    </div>
+                    <p class="small-note">Login saves your score to your dashboard and subject leaderboard.</p>
+                </aside>
+            </div>
+        </section>
+
+        <section id="examPanel" class="exam-panel hidden" aria-label="Quiz interface">
+            <div class="exam-topbar">
+                <div>
+                    <span class="exam-label">Subject</span>
+                    <strong id="activeSubject">Bihar GK</strong>
+                </div>
+                <div>
+                    <span class="exam-label">Topic</span>
+                    <strong id="activeTopic">Mixed</strong>
+                </div>
+                <div class="timer-box" id="timerBox" aria-live="polite">
+                    <span>Time Left</span>
+                    <strong id="timerDisplay">00:00</strong>
+                </div>
+                <button class="exam-btn danger" id="submitTestBtn" type="button">Submit Test</button>
+            </div>
+
+            <div class="exam-layout">
+                <article class="question-card">
+                    <div class="question-meta">
+                        <span id="questionCounter">Question 1 of 10</span>
+                        <span>Marks: +1 / 0</span>
+                    </div>
+                    <h2 id="questionText">Question text</h2>
+                    <div class="options-list" id="optionsList" role="radiogroup" aria-label="Answer options"></div>
+
+                    <div class="question-actions">
+                        <button class="exam-btn light" id="previousBtn" type="button">Previous</button>
+                        <button class="exam-btn warning" id="reviewBtn" type="button">Mark For Review</button>
+                        <button class="exam-btn outline" id="clearBtn" type="button">Clear Response</button>
+                        <button class="exam-btn primary" id="saveNextBtn" type="button">Save & Next</button>
+                        <button class="exam-btn light" id="nextBtn" type="button">Next</button>
+                    </div>
+                </article>
+
+                <aside class="palette-card" aria-label="Question palette">
+                    <h2>Question Palette</h2>
+                    <div class="palette-grid" id="questionPalette"></div>
+                    <div class="palette-legend">
+                        <span><i class="legend answered"></i>Answered</span>
+                        <span><i class="legend not-answered"></i>Not Answered</span>
+                        <span><i class="legend review"></i>Marked For Review</span>
+                        <span><i class="legend not-visited"></i>Not Visited</span>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <script src="quiz.js"></script>
+</body>
+</html>
