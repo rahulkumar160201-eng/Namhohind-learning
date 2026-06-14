@@ -3,210 +3,419 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Namhohind Bihar GK — Page 1</title>
+    <title>Bihar GK | नमोहिंद - बिहार परीक्षा तैयारी मंच</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .gk-premium-header {
+            background: linear-gradient(135deg, #0B3D91, #061a38);
+            color: white;
+            padding: 40px 20px 30px;
+            text-align: center;
+            position: relative;
+        }
+        .gk-action-bar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+        .gk-search-box {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+        .gk-search-box input {
+            width: 100%;
+            padding: 16px 20px 16px 55px;
+            border-radius: 50px;
+            border: 2px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.08);
+            color: white;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+        }
+        .gk-search-box input:focus {
+            background: rgba(255,255,255,0.12);
+            border-color: #FFD54F;
+            outline: none;
+            box-shadow: 0 0 15px rgba(255,213,79,0.2);
+        }
+        .gk-search-box input::placeholder { color: #cbd5e1; }
+        .gk-search-box i {
+            position: absolute;
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFD54F;
+            font-size: 1.2rem;
+        }
+        .gk-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .gk-stat-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+        }
+        .gk-stat-card:hover { transform: translateY(-5px); border-color: rgba(255,213,79,0.5); background: rgba(255,255,255,0.08); }
+        .gk-stat-val { font-size: 2.2rem; font-weight: 800; color: #FFD54F; margin-bottom: 5px; line-height: 1; }
+        .gk-stat-label { font-size: 0.85rem; color: #e2e8f0; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+        .gk-portal-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 40px;
+            max-width: 1400px;
+            width: 95%;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        @media (max-width: 992px) {
+            .gk-portal-layout { grid-template-columns: 1fr; gap: 20px; }
+            .gk-sidebar { display: none; }
+        }
+        .gk-sidebar { position: sticky; top: 100px; height: max-content; }
+        .sidebar-menu { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+        .sidebar-menu a {
+            display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 10px;
+            color: #475569; font-weight: 600; text-decoration: none; transition: all 0.3s;
+            background: #f8fafc; border: 1px solid transparent;
+        }
+        .sidebar-menu a:hover, .sidebar-menu a.active {
+            background: #eff6ff; color: #0B3D91; border-color: #bfdbfe; transform: translateX(5px);
+        }
+        .sidebar-menu a i { color: #3b82f6; width: 20px; text-align: center; }
+
+        .gk-filters {
+            display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 25px;
+        }
+        .filter-btn {
+            white-space: nowrap; padding: 10px 22px; border-radius: 50px; background: white;
+            border: 1px solid #cbd5e1; color: #475569; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all 0.3s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: #0B3D91; color: white; border-color: #0B3D91; box-shadow: 0 4px 12px rgba(11,61,145,0.2);
+        }
+
+        .gk-card-premium {
+            background: #ffffff; border-radius: 16px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0; border-left: 5px solid #0B3D91; transition: all 0.3s ease;
+            position: relative; margin-bottom: 20px;
+        }
+        .gk-card-premium:hover {
+            transform: translateY(-5px); box-shadow: 0 12px 25px rgba(11,61,145,0.1); border-left-color: #FFD54F;
+        }
+        .gk-card-flex { display: flex; gap: 20px; align-items: flex-start; }
+        .gk-badge-premium {
+            flex-shrink: 0; width: 48px; height: 48px; background: #f8fafc; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center; font-weight: 800; color: #0B3D91;
+            font-size: 1.2rem; border: 1px solid #e2e8f0;
+        }
+        .gk-card-premium h3 { font-size: 1.15rem; color: #1e293b; margin-bottom: 16px; font-weight: 700; line-height: 1.5; margin-top: 0; }
+        .gk-answer-box { background: #f8fafc; padding: 16px; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .gk-answer-text { color: #059669; font-weight: 700; margin-bottom: 8px; font-size: 1.05rem; }
+        .gk-explain-text { color: #64748b; font-size: 0.95rem; margin: 0; line-height: 1.6; }
+        
+        .modern-pagination { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 40px; flex-wrap: wrap; }
+        .modern-pagination a, .modern-pagination span {
+            display: inline-flex; align-items: center; justify-content: center; min-width: 40px; height: 40px; padding: 0 12px;
+            border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.3s;
+        }
+        .modern-pagination a { background: white; border: 1px solid #cbd5e1; color: #475569; }
+        .modern-pagination a:hover { background: #f1f5f9; border-color: #94a3b8; color: #0B3D91; }
+        .modern-pagination a.active { background: #0B3D91; color: white; border-color: #0B3D91; box-shadow: 0 4px 10px rgba(11,61,145,0.2); }
+        .modern-pagination a.disabled { background: #f8fafc; color: #94a3b8; border-color: #e2e8f0; pointer-events: none; }
+        .modern-pagination span.dots { color: #94a3b8; border: none; background: transparent; }
+    </style>
 </head>
 <body>
     <header class="site-header">
         <a class="brand" href="index.html" aria-label="Namhohind Bihar GK home">
-            <img src="bihar-logo.png" alt="Bihar logo">
-            <span>
-                <strong>Namhohind</strong>
-                <small>Bihar GK Learning Hub</small>
-            </span>
+            <img src="Images/bihar-logo.png" alt="नमोहिंद लोगो">
+            <span><strong>नमोहिंद | Namhohind</strong><small>बिहार परीक्षा तैयारी मंच</small></span>
         </a>
 
         <nav class="main-nav" aria-label="Main navigation">
-            <a class="active" href="index.html">Home</a>
-            <a href="bihar-gk-page1.html">Bihar GK</a>
-            <a href="current-affairs.html">Current Affairs</a>
-            <a href="quiz-dashboard.html">Quiz</a>
-            <a href="pdf-notes.html">PDF Notes</a>
+            <a href="index.html">🏠 Home</a>
+            <a class="active" href="bihar-gk-page1.html">📚 Bihar GK</a>
+            <a href="all-govt-exams.html">🏛️ All Govt Exams</a>
+            <a href="current-affairs.html">📰 Current Affairs</a>
+            <a href="feedback.html">⭐ Reviews & Feedback</a>
+            <a href="quiz.html" class="header-cta">Start Practice</a>
         </nav>
     </header>
 
-    <main>
-        <div class="gk-page-header">
-            <div class="gk-title">
-                <h1>📚 Bihar GK Question Bank</h1>
-                <div>
-                    <div class="gk-subtitle">100 महत्वपूर्ण बिहार सामान्य ज्ञान प्रश्न</div>
+    <main style="background: #f8fafc; padding-bottom: 80px;">
+        <!-- Premium Header Area -->
+        <section class="gk-premium-header">
+            <div style="max-width: 1200px; margin: 0 auto; position: relative;">
+                <p style="color: #FFD54F; font-weight: 700; letter-spacing: 2px; margin-bottom: 10px; text-transform: uppercase;">Question Bank</p>
+                <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 15px; color: white;">📚 Bihar GK Premium Portal</h1>
+                <p style="font-size: 1.1rem; color: #cbd5e1; max-width: 650px; margin: 0 auto; line-height: 1.6;">Master Bihar General Knowledge with our comprehensive collection of highly curated questions designed specifically for BPSC, BSSC, and Police exams.</p>
+                
+                <div class="gk-action-bar">
+                    <button class="btn btn-outline" style="border-color: #FFD54F; color: #FFD54F; border-radius: 8px;"><i class="fa-solid fa-book-open"></i> Study Mode</button>
+                    <a href="quiz.html" class="btn btn-primary" style="background: #FFD54F; color: #061a38; border-radius: 8px;"><i class="fa-solid fa-rocket"></i> Start Bihar GK Quiz</a>
                 </div>
-            </div>
 
-            <div class="gk-progress">
-                <div>पेज 1 / 10</div>
-                <div>प्रश्न 1-10 / 100</div>
-            </div>
-        </div>
+                <div class="gk-search-box">
+                    <input type="text" placeholder="Search questions, topics, or keywords...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
 
-        <div class="gk-page">
-            <div class="gk-controls">
-                <a class="gk-btn" aria-disabled="true">⬅ Previous</a>
-                <a class="gk-btn" href="index.html">🏠 Home</a>
-                <a class="gk-btn" href="bihar-gk-page2.html">Next ➡</a>
-            </div>
-
-            <div class="gk-cards">
-                <div class="gk-card">
-                    <div class="gk-question-row">
-                        <div class="gk-badge">1</div>
-                        <div>
-                            <div class="gk-question">प्रश्न 1: प्राचीन मगध का प्रमुख केंद्र कौन-सा शहर था?</div>
-                            <div class="gk-answer">उत्तर: पाटलिपुत्र</div>
-                            <div class="gk-explain">व्याख्या: पाटलिपुत्र (आधुनिक पटना) प्राचीन मगध का राजनीतिक और सांस्कृतिक केन्द्र था।</div>
-                        </div>
+                <div class="gk-stats-grid">
+                    <div class="gk-stat-card">
+                        <div class="gk-stat-val">100+</div>
+                        <div class="gk-stat-label">Questions</div>
                     </div>
-                </div>
-
-                <div class="gk-card">
-                    <div class="gk-question-row">
-                        <div class="gk-badge">2</div>
-                        <div>
-                            <div class="gk-question">प्रश्न 2: मौर्य साम्राज्य की स्थापना किसने की थी?</div>
-                            <div class="gk-answer">उत्तर: चन्द्रगुप्त मौर्य</div>
-                            <div class="gk-explain">व्याख्या: चन्द्रगुप्त मौर्य ने चौथी शताब्दी ईपू के आसपास मगध से निर्भाध राज्य विस्तार किया।</div>
-                        </div>
+                    <div class="gk-stat-card">
+                        <div class="gk-stat-val">10</div>
+                        <div class="gk-stat-label">Pages</div>
                     </div>
-                </div>
-
-                <div class="gk-card">
-                    <div class="gk-question-row">
-                        <div class="gk-badge">3</div>
-                        <div>
-                            <div class="gk-question">प्रश्न 3: कौन सा मौर्य सम्राट बौद्ध धर्म अपनाकर अहिंसा का प्रचार करने के लिए प्रसिद्ध हुआ?</div>
-                            <div class="gk-answer">उत्तर: अशोक</div>
-                            <div class="gk-explain">व्याख्या: कलिंग युद्ध के बाद अशोक ने बौद्ध धर्म अपनाया और धर्मशासनों व स्तम्भों के माध्यम से नैतिक शासन का प्रचार किया।</div>
-                        </div>
+                    <div class="gk-stat-card">
+                        <div class="gk-stat-val">15</div>
+                        <div class="gk-stat-label">Practice Sets</div>
                     </div>
-                </div>
-
-                <div class="gk-card">
-                    <div class="gk-question-row">
-                        <div class="gk-badge">4</div>
-                        <div>
-                            <div class="gk-question">प्रश्न 4: नालंदा विश्वविद्यालय प्राचीन भारत में किसके लिए प्रसिद्ध था?</div>
-                            <div class="gk-answer">उत्तर: उच्च अध्ययन और बौद्ध शिक्षा</div>
-                            <div class="gk-explain">व्याख्या: नालंदा में दर्शन, तर्कशास्त्र और बौद्ध अध्ययन का उच्चतम स्तर सिखाया जाता था और यह अंतरराष्ट्रीय छात्रों का केंद्र था।</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gk-card">
-                    <div class="gk-question-row">
-                        <div class="gk-badge">5</div>
-                        <div>
-                            <div class="gk-question">प्रश्न 5: प्राचीन बिहार के विकास में किस नदी की घाटी सबसे महत्वपूर्ण रही?</div>
-                            <div class="gk-answer">उत्तर: गंगा नदी</div>
-                            <div class="gk-explain">व्याख्या: गंगा की उपजाऊ घाटी ने कृषि और नगरीकरण को प्रोत्साहित करके क्षेत्र के विकास में मुख्य भूमिका निभाई।</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gk-card">
-                    <div class="gk-question-row">
-                        <div class="gk-badge">6</div>
-                        <div>
-                            <div class="gk-question">प्रश्न 6: मौर्य काल के दौरान पाटलिपुत्र का क्या महत्त्व था?</div>
-                            <div class="gk-answer">उत्तर: यह प्रशासनिक और सांस्कृतिक राजधानी था</div>
-                            <div class="gk-explain">व्याख्या: पाटलिपुत्र मौर्य और बाद के शासकों का मुख्यालय था और शासकीय कार्य वहीं से संचालित होते थे।</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gk-card">
-                    <div class="gk-question-row">
-                        <div class="gk-badge">7</div>
-                        <div>
-                            <div class="gk-question">प्रश्न 7: नालंदा में किस प्रकार के छात्र आते थे?</div>
-                            <div class="gk-answer">उत्तर: स्थानीय और अंतरराष्ट्रीय विद्यार्थी</div>
-                            <div class="gk-explain">व्याख्या: नालंदा में एशिया भर से विद्यार्थी और विद्वान अध्ययन‑विनिमय हेतु आते थे और यहाँ आवासीय व्यवस्था थी।</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gk-card">
-                    <div class="gk-question-row">
-                        <div class="gk-badge">8</div>
-                        <div>
-                            <div class="gk-question">प्रश्न 8: मगध के उदय के पहले किन क्षेत्रीय शक्तियों का प्रभाव कम हुआ था?</div>
-                            <div class="gk-answer">उत्तर: कुरु‑पंचाला तथा पुराने जनपदिक समूहों का प्रभुत्व घटा</div>
-                            <div class="gk-explain">व्याख्या: 6वीं से 4थी शताब्दी ईपू में क्षेत्रीय बदलावों के कारण मगध नया व प्रबल राज्य बनकर उभरा।</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gk-card">
-                    <div class="gk-question-row">
-                        <div class="gk-badge">9</div>
-                        <div>
-                            <div class="gk-question">प्रश्न 9: मौर्य साम्राज्य की कौन‑सी प्रशासनिक विशेषता प्रसिद्ध है?</div>
-                            <div class="gk-answer">उत्तर: केंद्रीकृत नौकरशाही और प्रांतीय प्रशासक</div>
-                            <div class="gk-explain">व्याख्या: मौर्यों ने प्रांतों में राज्यपाल नियुक्त किए और विस्तृत प्रशासनिक प्रणाली विकसित की।</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gk-card">
-                    <div class="gk-question-row">
-                        <div class="gk-badge">10</div>
-                        <div>
-                            <div class="gk-question">प्रश्न 10: नालंदा के ग्रंथालय का पारंपरिक नाम क्या था?</div>
-                            <div class="gk-answer">उत्तर: धर्मगंज</div>
-                            <div class="gk-explain">व्याख्या: नालंदा में विशाल पुस्तकालय हुआ करता था जिसे धर्मगंज के नाम से जाना जाता था और उसमें अनेक शास्त्रीय ग्रंथ रखे जाते थे।</div>
-                        </div>
+                    <div class="gk-stat-card">
+                        <div class="gk-stat-val">10%</div>
+                        <div class="gk-stat-label">Completion</div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="gk-page-nav">
-                <a class="current" href="bihar-gk-page1.html">1</a>
-                <a href="bihar-gk-page2.html">2</a>
-                <a href="bihar-gk-page3.html">3</a>
-                <a href="bihar-gk-page4.html">4</a>
-                <a href="bihar-gk-page5.html">5</a>
-                <a href="bihar-gk-page6.html">6</a>
-                <a href="bihar-gk-page7.html">7</a>
-                <a href="bihar-gk-page8.html">8</a>
-                <a href="bihar-gk-page9.html">9</a>
-                <a href="bihar-gk-page10.html">10</a>
+        <!-- Main Layout -->
+        <div class="gk-portal-layout">
+            
+            <!-- Sidebar (Desktop Only) -->
+            <aside class="gk-sidebar">
+                <div style="background: white; border-radius: 16px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #e2e8f0;">
+                    <h3 style="font-size: 1.1rem; color: #0B3D91; margin-bottom: 15px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; font-weight: 700; text-transform: uppercase;">Quick Access</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="#" class="active"><i class="fa-solid fa-monument"></i> Bihar History</a></li>
+                        <li><a href="#"><i class="fa-solid fa-map-location-dot"></i> Bihar Geography</a></li>
+                        <li><a href="#"><i class="fa-solid fa-landmark-dome"></i> Bihar Polity</a></li>
+                        <li><a href="#"><i class="fa-solid fa-coins"></i> Bihar Economy</a></li>
+                        <li><a href="#"><i class="fa-solid fa-masks-theater"></i> Bihar Culture</a></li>
+                    </ul>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #0B3D91, #1A56BC); border-radius: 16px; padding: 25px; margin-top: 20px; color: white; text-align: center; box-shadow: 0 4px 15px rgba(11,61,145,0.15);">
+                    <i class="fa-solid fa-ranking-star" style="font-size: 2.5rem; color: #FFD54F; margin-bottom: 15px;"></i>
+                    <h3 style="color: white; margin-bottom: 10px; font-size: 1.2rem;">Test Your Preparation</h3>
+                    <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 15px;">Evaluate yourself with our real-time CBT mock tests.</p>
+                    <a href="quiz.html" class="btn btn-primary" style="width: 100%; background: #FFD54F; color: #061a38; border: none; padding: 10px;">Take Mock Test</a>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <div class="gk-main-content">
+                
+                <!-- Category Filters -->
+                <div class="gk-filters">
+                    <button class="filter-btn active" data-topic="history">🏛 History (100)</button>
+                    <button class="filter-btn" data-topic="geography">🗺 Geography (100)</button>
+                    <button class="filter-btn" data-topic="polity">🏛 Polity (100)</button>
+                    <button class="filter-btn" data-topic="economy">💰 Economy (100)</button>
+                    <button class="filter-btn" data-topic="art-culture">🎭 Art & Culture (100)</button>
+                    <button class="filter-btn" data-topic="agriculture">🌾 Agriculture (100)</button>
+                    <button class="filter-btn" data-topic="transport">🚆 Transport (100)</button>
+                    <button class="filter-btn" data-topic="industry">🏭 Industry (100)</button>
+                    <button class="filter-btn" data-topic="tourism">🏞 Tourism (100)</button>
+                    <button class="filter-btn" data-topic="misc">📚 Misc (100)</button>
+                </div>
+
+                <!-- Progress Bar Top -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; background: white; padding: 18px 25px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); border: 1px solid #e2e8f0; flex-wrap: wrap; gap: 15px;">
+                    <span id="page-status" style="font-weight: 700; color: #0B3D91; font-size: 1.1rem;"><i class="fa-solid fa-layer-group" style="color: #FFD54F; margin-right: 8px;"></i> Page 1 of 10</span>
+                    <div style="flex-grow: 1; max-width: 300px; height: 8px; background: #e2e8f0; border-radius: 10px; overflow: hidden; margin: 0 15px;">
+                        <div id="progress-bar-fill" style="width: 10%; height: 100%; background: #0B3D91; border-radius: 10px;"></div>
+                    </div>
+                    <span id="question-status" style="font-weight: 600; color: #64748b; background: #f8fafc; padding: 5px 12px; border-radius: 6px; border: 1px solid #e2e8f0;">Q. 1 - 10</span>
+                </div>
+
+                <!-- Dynamic Question Container -->
+                <div id="questions-container">
+                    <!-- Questions injected by JavaScript -->
+                </div>
+
+                <!-- Pagination -->
+                <div class="modern-pagination" id="gk-pagination">
+                    <!-- Pagination injected by JavaScript -->
+                </div>
             </div>
-
-            <div class="gk-footer-note">Namhohind Bihar GK • Knowledge • Practice • Success</div>
         </div>
     </main>
 
-    <footer class="site-footer">
-        <div>
-            <h3>About Namhohind</h3>
-            <p>Namhohind Bihar GK is a modern education platform for Bihar exam preparation, current affairs, quizzes, and notes.</p>
-            <p>Created By Rahul Kumar</p>
-        </div>
-
-        <div>
-            <h3>Quick Links</h3>
-            <a href="index.html">Home</a>
-            <a href="bihar-gk-page1.html">Bihar GK</a>
-            <a href="current-affairs.html">Current Affairs</a>
-            <a href="quiz-dashboard.html">Quiz</a>
-            <a href="pdf-notes.html">PDF Notes</a>
-        </div>
-
-        <div>
-            <h3>Contact</h3>
-            <a href="mailto:rquiztak@gmail.com">rquiztak@gmail.com</a>
-            <p>Bihar Exam Preparation Platform</p>
-        </div>
-
-        <div>
-            <h3>Social Media</h3>
-            <div class="social-links" aria-label="Social media links">
-                <a href="https://www.youtube.com/@IndiaCaseDiary" target="_blank" rel="noopener" aria-label="YouTube"><img src="YouTube Icon.png" alt=""></a>
-                <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><img src="Facebook Icon.png" alt=""></a>
-                <a href="http://instagram.com/si__rahulkumarsaw/" target="_blank" rel="noopener" aria-label="Instagram"><img src="Instagram Icon.png" alt=""></a>
-                <a href="mailto:rquiztak@gmail.com" aria-label="Email"><img src="Email Icon.png" alt=""></a>
+    <footer class="site-footer" style="background: linear-gradient(135deg, #001a4d 0%, #002b7f 100%); padding: 40px 20px 20px;">
+        <div class="footer-top" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding-bottom: 30px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+            <div class="footer-col brand-col">
+                <div class="footer-logo" style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <img src="Images/bihar-logo.png" alt="नमोहिंद" style="width: 50px; height: auto;">
+                    <h2 style="color: #ffffff; font-size: 1.4rem; margin: 0; line-height: 1.2;">नमोहिंद | Namhohind<br><small style="font-size: 0.95rem; color: #FFD54F; font-weight: 500;">बिहार परीक्षा तैयारी मंच</small></h2>
+                </div>
+                <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; max-width: 350px;">बिहार एवं सरकारी प्रतियोगी परीक्षाओं की सम्पूर्ण तैयारी का डिजिटल मंच।</p>
+                <p style="margin-top: 15px; color: #FFD54F; font-weight: 600; font-size: 1rem;">Created By: Rahul Kumar</p>
+            </div>
+            <div class="footer-col links-col">
+                <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 20px; position: relative; padding-bottom: 8px;">Quick Links<span style="content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background: #FFD54F; border-radius: 2px;"></span></h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+                    <li><a href="index.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">🏠 Home</a></li>
+                    <li><a href="bihar-gk-page1.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">📚 Bihar GK</a></li>
+                    <li><a href="all-govt-exams.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">🏛️ All Govt Exams</a></li>
+                    <li><a href="current-affairs.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">📰 Current Affairs</a></li>
+                    <li><a href="quiz.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">📝 Quiz</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 20px; position: relative; padding-bottom: 8px;">Contact Us<span style="content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background: #FFD54F; border-radius: 2px;"></span></h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; color: #cbd5e1; font-size: 0.95rem;">
+                    <li style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-envelope" style="color: #FFD54F; font-size: 1.1rem;"></i> rquiztak@gmail.com</li>
+                    <li style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-location-dot" style="color: #FFD54F; font-size: 1.1rem;"></i> Patna, Bihar, India</li>
+                </ul>
+                <h3 style="color: #ffffff; font-size: 1.1rem; margin-top: 25px; margin-bottom: 15px;">Connect With Us</h3>
+                <div class="social-links" aria-label="Social media links" style="display: flex; gap: 12px;">
+                    <a href="https://www.youtube.com/@IndiaCaseDiary" target="_blank" rel="noopener" aria-label="YouTube" class="brand-social-btn yt"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/rahul.sow.370/" target="_blank" rel="noopener" aria-label="Facebook" class="brand-social-btn fb"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/si__rahulkumarsaw/" target="_blank" rel="noopener" aria-label="Instagram" class="brand-social-btn ig"><i class="fa-brands fa-instagram"></i></a>
+                </div>
             </div>
         </div>
+        <div class="footer-bottom" style="max-width: 1200px; margin: 0 auto; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; color: #94a3b8; font-size: 0.9rem;">
+            <p style="margin: 0;">&copy; 2026 नमोहिंद | Namhohind</p>
+            <p style="margin: 0; text-align: right;">Founder & Developer: <span style="color: #ffffff; font-weight: 500;">Rahul Kumar</span></p>
+        </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filters = document.querySelectorAll('.filter-btn');
+            const container = document.getElementById('questions-container');
+            const pagination = document.getElementById('gk-pagination');
+            const pageStatus = document.getElementById('page-status');
+            const questionStatus = document.getElementById('question-status');
+            const progressBar = document.getElementById('progress-bar-fill');
+
+            let currentData = [];
+            let currentTopic = 'history';
+            let currentPage = 1;
+            const itemsPerPage = 10;
+            const totalPages = 10;
+
+            // Helper: Generate dummy data in exact requested structure if JSON isn't available yet
+            const generateDummyData = (topic, page) => Array.from({length: itemsPerPage}, (_, i) => {
+                const startIdx = (page - 1) * itemsPerPage;
+                return {
+                    id: startIdx + i + 1,
+                    question: `Sample Question ${startIdx + i + 1} for ${topic}? (Data loading placeholder)`,
+                    answer: `Sample Answer ${startIdx + i + 1}`,
+                    explanation: `This is an auto-generated explanation for question ${startIdx + i + 1} in the ${topic} category.`,
+                    topic: topic,
+                    page: page
+                };
+            });
+
+            async function loadPage(topic, page) {
+                currentTopic = topic;
+                currentPage = page;
+                try {
+                    container.innerHTML = '<div style="text-align:center; padding: 60px;"><i class="fa-solid fa-spinner fa-spin fa-2x" style="color:#0B3D91;"></i><p style="margin-top:15px; color:#64748b;">Loading questions...</p></div>';
+                    
+                    const response = await fetch(`question-banks/${topic}-page${page}.json`);
+                    if (response.ok) {
+                        currentData = await response.json();
+                    } else {
+                        console.warn(`File ${topic}-page${page}.json not found. Falling back to structured dummy data.`);
+                        currentData = generateDummyData(topic, page);
+                    }
+                    
+                    render();
+                } catch (error) {
+                    console.error("Error loading topic:", error);
+                    currentData = generateDummyData(topic, page);
+                    render();
+                }
+            }
+
+            function render() {
+                const start = (currentPage - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+
+                container.innerHTML = currentData.map((q) => `
+                    <div class="gk-card-premium">
+                        <div class="gk-card-flex">
+                            <div class="gk-badge-premium">${String(q.id).padStart(2, '0')}</div>
+                            <div style="flex: 1;">
+                                <h3>${q.question_hi || q.question}</h3>
+                                <div class="gk-answer-box">
+                                    <div class="gk-answer-text"><i class="fa-solid fa-check-circle"></i> उत्तर: ${q.answer_hi || q.answer}</div>
+                                    <p class="gk-explain-text"><strong>व्याख्या:</strong> ${q.explanation_hi || q.explanation}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+                if(pageStatus) pageStatus.innerHTML = `<i class="fa-solid fa-layer-group" style="color: #FFD54F; margin-right: 8px;"></i> Page ${currentPage} of ${totalPages}`;
+                if(questionStatus) questionStatus.innerText = `Q. ${start + 1} - ${end}`;
+                if(progressBar) progressBar.style.width = `${(currentPage / totalPages) * 100}%`;
+
+                renderPagination(totalPages);
+            }
+
+            function renderPagination(totalPages) {
+                let html = `<a href="#" class="${currentPage === 1 ? 'disabled' : ''}" data-page="prev"><i class="fa-solid fa-chevron-left" style="margin-right: 5px;"></i> Previous</a>`;
+                
+                for (let i = 1; i <= totalPages; i++) {
+                    if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                        html += `<a href="#" class="${currentPage === i ? 'active' : ''}" data-page="${i}">${i}</a>`;
+                    } else if (i === currentPage - 2 || i === currentPage + 2) {
+                        html += `<span class="dots">...</span>`;
+                    }
+                }
+                html += `<a href="#" class="${currentPage === totalPages ? 'disabled' : ''}" data-page="next">Next <i class="fa-solid fa-chevron-right" style="margin-left: 5px;"></i></a>`;
+                
+                pagination.innerHTML = html;
+
+                pagination.querySelectorAll('a').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        if (btn.classList.contains('disabled') || btn.classList.contains('active')) return;
+                        
+                        const action = btn.getAttribute('data-page');
+                        let newPage = currentPage;
+                        if (action === 'prev') newPage--;
+                        else if (action === 'next') newPage++;
+                        else newPage = parseInt(action);
+                        
+                        loadPage(currentTopic, newPage);
+                        window.scrollTo({ top: 300, behavior: 'smooth' });
+                    });
+                });
+            }
+
+            filters.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filters.forEach(f => f.classList.remove('active'));
+                    btn.classList.add('active');
+                    const topic = btn.getAttribute('data-topic');
+                    loadPage(topic, 1);
+                });
+            });
+
+            // Initialize with the first topic
+            loadPage('history', 1);
+        });
+    </script>
 </body>
 </html>

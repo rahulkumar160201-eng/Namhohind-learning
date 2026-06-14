@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional CBT Examination System - Namhohind">
+    <title>CBT Examination | नमोहिंद | Namhohind</title>
+    <link rel="stylesheet" href="cbt-style.css">
+</head>
+<body oncontextmenu="return false;">
+
+    <!-- Setup Screen -->
+    <div id="setup-screen" class="screen-container">
+        <div class="setup-card">
+            <img src="bihar-logo.png" alt="Namhohind Logo" class="brand-logo" onerror="this.style.display='none'">
+            <h1>नमोहिंद | Namhohind</h1>
+            <h2>Computer Based Test (CBT)</h2>
+            <div class="instructions">
+                <h3>Exam Instructions:</h3>
+                <ul>
+                    <li>Total Questions: <strong>50</strong></li>
+                    <li>Total Time: <strong>45 Minutes</strong></li>
+                    <li>Passing Marks: <strong>60%</strong></li>
+                    <li class="text-danger"><strong>Security Notice:</strong> Tab switching, screen minimizing, copying, and right-clicking are strictly prohibited.</li>
+                    <li>The exam will <strong>auto-submit</strong> after 3 warnings for losing window focus.</li>
+                </ul>
+            </div>
+            <label for="candidate-name" class="visually-hidden">Full Name</label>
+            <input type="text" id="candidate-name" placeholder="Enter Full Name" required autocomplete="off">
+            <button id="btn-start" class="btn btn-primary w-100">Start Exam</button>
+            <div class="footer-note">
+                &copy; 2026 नमोहिंद | Namhohind<br>
+                All Rights Reserved.<br>
+                Founder & Developer: Rahul Kumar
+            </div>
+        </div>
+    </div>
+
+    <!-- Exam Screen -->
+    <div id="exam-screen" class="hidden">
+        <header class="exam-header">
+            <div class="brand">नमोहिंद | Namhohind CBT</div>
+            <div class="timer-box">Time Left: <span id="time">45:00</span></div>
+        </header>
+
+        <main class="exam-layout">
+            <!-- Left Side: Question Area -->
+            <div class="left-panel">
+                <div class="q-header">
+                    <span id="q-no">Question 1</span>
+                </div>
+                <div class="q-body" id="q-text">
+                    <!-- Question text injected here -->
+                </div>
+                <div class="options-container" id="options">
+                    <!-- Options injected here -->
+                </div>
+                <div class="q-footer">
+                    <button id="btn-mark" class="btn btn-warning">Mark for Review & Next</button>
+                    <button id="btn-clear" class="btn btn-light">Clear Response</button>
+                    <button id="btn-prev" class="btn btn-secondary">Previous</button>
+                    <button id="btn-next" class="btn btn-primary">Save & Next</button>
+                </div>
+            </div>
+
+            <!-- Right Side: Palette & Status Area -->
+            <div class="right-panel">
+                <div class="cand-info">
+                    <div class="cand-avatar">👤</div>
+                    <div id="disp-name">Candidate Name</div>
+                </div>
+                
+                <div class="status-panel">
+                    <div class="status-item"><span class="badge answered"></span> <span id="cnt-ans">0</span> Answered</div>
+                    <div class="status-item"><span class="badge not-answered"></span> <span id="cnt-notans">0</span> Not Answered</div>
+                    <div class="status-item"><span class="badge not-visited"></span> <span id="cnt-notvis">50</span> Not Visited</div>
+                    <div class="status-item"><span class="badge marked"></span> <span id="cnt-mark">0</span> Marked for Review</div>
+                    <div class="status-item"><span class="badge ans-marked">✔</span> <span id="cnt-ansmark">0</span> Answered & Marked</div>
+                </div>
+
+                <div class="palette-container">
+                    <h3 class="palette-title">Question Palette</h3>
+                    <div class="palette-grid" id="palette">
+                        <!-- Palette Buttons injected here -->
+                    </div>
+                </div>
+
+                <button id="btn-submit" class="btn btn-success w-100 mt-auto">Submit Exam</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="result-screen" class="screen-container hidden">
+        <div class="result-card">
+            <h2>Exam Result</h2>
+            <table class="res-table">
+                <tr><th>Candidate Name</th><td id="res-name"></td></tr>
+                <tr><th>Exam Date</th><td id="res-date"></td></tr>
+                <tr><th>Total Questions</th><td>50</td></tr>
+                <tr><th>Correct Answers</th><td id="res-correct" class="text-success"></td></tr>
+                <tr><th>Wrong / Unanswered</th><td id="res-wrong" class="text-danger"></td></tr>
+                <tr><th>Score</th><td id="res-score"></td></tr>
+                <tr><th>Percentage</th><td id="res-percent"></td></tr>
+                <tr><th>Status</th><td id="res-status"></td></tr>
+            </table>
+            
+            <div id="cert-area" class="hidden mt-20">
+                <button id="btn-cert" class="btn btn-warning w-100">Download Certificate of Achievement</button>
+            </div>
+            
+            <button class="btn btn-primary w-100 mt-20" onclick="window.location.href='index.html'">Exit to Homepage</button>
+        </div>
+    </div>
+
+    <!-- Warning Overlay for Cheating / Focus Loss Detection -->
+    <div id="warning-overlay" class="overlay hidden">
+        <div class="warning-box">
+            <h2 class="text-danger">⚠️ Security Warning</h2>
+            <p id="warning-msg">Tab switching or leaving the exam window is not allowed.</p>
+            <button id="btn-resume" class="btn btn-primary mt-20">Resume Exam</button>
+        </div>
+    </div>
+
+    <script src="cbt-script.js"></script>
+</body>
+</html>

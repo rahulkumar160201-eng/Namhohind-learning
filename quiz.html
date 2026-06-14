@@ -3,129 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional CBT style Bihar exam practice quiz for Namhohind Bihar GK.">
-    <title>Online Exam | Namhohind Bihar GK</title>
+    <meta name="description" content="Online Mock Test for Bihar Exams - Bihar GK, BPSC, Bihar Police, Current Affairs">
+    <title>Mock Test | नमोहिंद - बिहार परीक्षा तैयारी मंच</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body data-page="quiz">
-    <header class="site-header exam-site-header">
+<body>
+    <header class="site-header" id="top-nav">
         <a class="brand" href="index.html" aria-label="Namhohind Bihar GK home">
-            <img src="bihar-logo.png" alt="Bihar logo">
-            <span>
-                <strong>Namhohind</strong>
-                <small>Bihar GK Learning Hub</small>
-            </span>
+            <img src="Images/bihar-logo.png" alt="नमोहिंद">
+            <span><strong>नमोहिंद | Namhohind</strong><small>बिहार परीक्षा तैयारी मंच</small></span>
         </a>
         <nav class="main-nav" aria-label="Main navigation">
-            <a href="index.html">Home</a>
-            <a href="bihar-gk-page1.html">Bihar GK</a>
-            <a href="current-affairs.html">Current Affairs</a>
-            <a class="active" href="quiz.html">Quiz</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="leaderboard.html">Leaderboard</a>
+            <a href="index.html">🏠 Home</a>
+            <a href="bihar-gk-page1.html">📚 Bihar GK</a>
+            <a href="all-govt-exams.html">🏛️ All Govt Exams</a>
+            <a href="current-affairs.html">📰 Current Affairs</a>
+            <a class="active" href="quiz.html">📝 Quiz</a>
+            <a href="quiz.html" class="header-cta">Start Practice</a>
         </nav>
+        <div id="nav-date" class="nav-date" style="color: white; margin-left: auto; padding-right: 20px;"></div>
     </header>
 
-    <main class="exam-shell">
-        <section id="quizDashboard" class="exam-dashboard" aria-labelledby="dashboardTitle">
-            <div class="exam-title-block">
-                <p class="exam-kicker">Namhohind Bihar Exam Practice Platform</p>
-                <h1 id="dashboardTitle">Online CBT Mock Test</h1>
-                <p>Select a subject and topic to start a timed government-exam style quiz.</p>
+    <main class="quiz-main-container">
+        <!-- Security Warning Overlay -->
+        <div id="security-warning" class="hidden overlay">
+            <div class="warning-box text-center p-4 bg-white rounded shadow">
+                <i class="fa-solid fa-triangle-exclamation text-danger text-4xl mb-3"></i>
+                <h2 class="text-danger">Security Violation Detected</h2>
+                <p id="warning-msg" class="mb-4">Tab switching or minimizing is not allowed.</p>
+                <button id="btn-resume-exam" class="btn btn-primary">Acknowledge & Resume</button>
             </div>
+        </div>
 
-            <div class="dashboard-grid">
-                <form class="exam-card quiz-form" id="quizSetupForm">
-                    <h2 id="quizSetupTitle" style="margin-top:0; color:var(--bihar-blue);">Select Set</h2>
-                    <p id="quizSetupDesc" style="margin-bottom:20px; color:#666;">Choose a practice set to begin.</p>
-                    
-                    <input type="hidden" id="subjectSelect">
-                    <label for="topicSelect">Select Set</label>
-                    <select id="topicSelect" required></select>
+        <!-- 1. Dashboard Screen -->
+        <section id="screen-dashboard" class="screen">
+            <div class="dashboard-header text-center" style="margin: 40px auto;">
+                <h1 style="color: var(--primary); font-size: 2.5rem; margin-bottom: 12px;">📝 Premium CBT Portal</h1>
+                <p style="font-size: 1.1rem; color: var(--muted);">Select your subject or exam category to begin practice.</p>
+            </div>
+            
+            <div class="container">
+                <h2 class="section-title"><i class="fa-solid fa-book-open"></i> Subject Wise Practice</h2>
+                <div id="subject-grid" class="card-grid four-col"></div>
 
-                    <div class="exam-summary" aria-label="Quiz details">
-                        <div><span>Total Questions</span><strong id="totalQuestions">0</strong></div>
-                        <div><span>Total Marks</span><strong id="totalMarks">0</strong></div>
-                        <div><span>Time Duration</span><strong id="timeDuration">0 Min</strong></div>
-                        <div><span>Exam Mode</span><strong>CBT</strong></div>
-                    </div>
-
-                    <button class="exam-btn primary" type="submit">Start Quiz</button>
-                </form>
-
-                <aside class="exam-card user-card">
-                    <h2>Candidate Panel</h2>
-                    <div class="candidate-mini">
-                        <p><span>Candidate Name</span><strong id="candidateName">Guest User</strong></p>
-                        <p><span>Candidate ID</span><strong id="candidateId">N/A</strong></p>
-                        <p><span>Date of Birth</span><strong id="candidateDob">N/A</strong></p>
-                        <p><span>Current Rank</span><strong id="candidateRank">N/A</strong></p>
-                        <p><span>Total Score</span><strong id="candidateScore">0</strong></p>
-                        <p><span>Tests Attempted</span><strong id="candidateTests">0</strong></p>
-                    </div>
-                    <div class="auth-actions" id="guestActions">
-                        <a class="exam-btn light" href="login.html">Login</a>
-                        <a class="exam-btn outline" href="signup.html">Signup</a>
-                    </div>
-                    <div class="auth-actions hidden" id="loggedInActions">
-                        <a class="exam-btn light" href="quiz-dashboard.html">Dashboard</a>
-                        <button class="exam-btn outline" id="logoutBtn" type="button">Logout</button>
-                    </div>
-                    <p class="small-note">Login saves your score to your dashboard and subject leaderboard.</p>
-                </aside>
+                <h2 class="section-title mt-5"><i class="fa-solid fa-landmark"></i> Government Exams</h2>
+                <div id="exam-grid" class="card-grid four-col"></div>
             </div>
         </section>
 
-        <section id="examPanel" class="exam-panel hidden" aria-label="Quiz interface">
-            <div class="exam-topbar">
-                <div>
-                    <span class="exam-label">Subject</span>
-                    <strong id="activeSubject">Bihar GK</strong>
+        <!-- 2. Set List Screen -->
+        <section id="screen-set-list" class="screen hidden">
+            <div class="container my-5">
+                <button class="btn btn-outline mb-4" onclick="showScreen('screen-dashboard')">⬅ Back to Dashboard</button>
+                <div class="section-head text-center mb-5">
+                    <h2 id="set-list-title">Sets</h2>
+                    <p>Select a practice set to start your exam.</p>
                 </div>
-                <div>
-                    <span class="exam-label">Topic</span>
-                    <strong id="activeTopic">Mixed</strong>
+                <div id="set-list-container" class="card-grid three-col"></div>
+            </div>
+        </section>
+
+        <!-- 3. Instructions Screen -->
+        <section id="screen-instructions" class="screen hidden">
+            <div class="container my-5">
+                <button class="btn btn-outline mb-4" onclick="showScreen('screen-set-list')">⬅ Back to Sets</button>
+                <div class="feature-card" style="max-width: 800px; margin: 0 auto; padding: 40px;">
+                    <h2 id="inst-exam-title" class="text-center text-primary" style="margin-bottom: 24px; font-size: 2rem;">Exam Title</h2>
+                    
+                    <div style="background: var(--blue-100); padding: 24px; border-radius: 12px; margin-bottom: 24px;">
+                        <h4 style="margin-bottom: 12px; color: var(--blue-950); font-size: 1.15rem;">General Instructions:</h4>
+                        <ul style="padding-left: 20px; color: var(--text-main); line-height: 1.8;">
+                            <li>The examination will be of <strong>45 minutes</strong> duration.</li>
+                            <li>There are <strong>50 multiple choice questions</strong> in this test.</li>
+                            <li><strong class="text-danger">Anti-Cheating Enabled:</strong> Do not switch tabs or minimize the browser. Doing so will issue a warning and terminate the exam.</li>
+                            <li>You can use the 'Mark for Review' feature to revisit questions later.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <label for="cand-name" style="font-weight: 800; display: block; margin-bottom: 8px;">Candidate Name:</label>
+                        <input type="text" id="cand-name" style="width: 100%; padding: 12px 16px; border: 1px solid var(--line); border-radius: 8px; font-size: 1.05rem;" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="agree-chk" style="margin-top: 5px; transform: scale(1.3); cursor: pointer;">
+                        <label for="agree-chk" style="color: var(--muted); cursor: pointer; font-weight: 700; line-height: 1.5;">I have read and understood the instructions. I agree not to use unfair means and am ready to begin.</label>
+                    </div>
+
+                    <button id="btn-start-exam" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 1.15rem;" disabled>Start Examination ➡</button>
                 </div>
-                <div class="timer-box" id="timerBox" aria-live="polite">
-                    <span>Time Left</span>
-                    <strong id="timerDisplay">00:00</strong>
+            </div>
+        </section>
+
+        <!-- 4. CBT Exam Interface -->
+        <section id="screen-exam" class="screen hidden cbt-layout-wrapper">
+            <div class="cbt-top-header">
+                <div class="cbt-brand">
+                    <i class="fa-solid fa-graduation-cap"></i> <span id="display-exam">Exam Title</span>
                 </div>
-                <button class="exam-btn danger" id="submitTestBtn" type="button">Submit Test</button>
+                <div class="cbt-timer-box">
+                    <i class="fa-solid fa-clock"></i> Time Left: <span id="timer-display">45:00</span>
+                </div>
             </div>
 
-            <div class="exam-layout">
-                <article class="question-card">
-                    <div class="question-meta">
-                        <span id="questionCounter">Question 1 of 10</span>
-                        <span>Marks: +1 / 0</span>
+            <div class="cbt-main-area">
+                <div class="cbt-question-section">
+                    <div class="q-header-bar">
+                        <span id="q-no" class="q-number-badge">Question 1</span>
+                        <span class="report-btn"><i class="fa-solid fa-circle-exclamation"></i> Report Error</span>
                     </div>
-                    <h2 id="questionText">Question text</h2>
-                    <div class="options-list" id="optionsList" role="radiogroup" aria-label="Answer options"></div>
+                    <div class="q-content-box">
+                        <div id="q-text" class="question-text">Question text goes here...</div>
+                        <div id="q-options" class="options-group"></div>
+                    </div>
+                    <div class="cbt-action-footer">
+                        <div class="left-actions">
+                            <button id="btn-mark" class="btn btn-secondary" style="background: #6f42c1; color: white;">Mark for Review & Next</button>
+                            <button id="btn-clear" class="btn btn-light">Clear Response</button>
+                        </div>
+                        <div class="right-actions">
+                            <button id="btn-prev" class="btn btn-light">⬅ Previous</button>
+                            <button id="btn-next" class="btn btn-primary">Save & Next ➡</button>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="question-actions">
-                        <button class="exam-btn light" id="previousBtn" type="button">Previous</button>
-                        <button class="exam-btn warning" id="reviewBtn" type="button">Mark For Review</button>
-                        <button class="exam-btn outline" id="clearBtn" type="button">Clear Response</button>
-                        <button class="exam-btn primary" id="saveNextBtn" type="button">Save & Next</button>
-                        <button class="exam-btn light" id="nextBtn" type="button">Next</button>
+                <div class="cbt-sidebar-section">
+                    <div class="candidate-mini-profile">
+                        <img src="https://ui-avatars.com/api/?name=User&background=0B3D91&color=fff" alt="Avatar">
+                        <span id="display-name">Candidate Name</span>
                     </div>
-                </article>
+                    
+                    <div class="palette-stats-grid">
+                        <div class="stat-item"><span class="pal-badge answered" id="cnt-ans">0</span> Answered</div>
+                        <div class="stat-item"><span class="pal-badge not-answered" id="cnt-notans">0</span> Not Answered</div>
+                        <div class="stat-item"><span class="pal-badge not-visited" id="cnt-notvis">0</span> Not Visited</div>
+                        <div class="stat-item"><span class="pal-badge marked" id="cnt-mark">0</span> Marked</div>
+                        <div class="stat-item full-width"><span class="pal-badge ans-marked" id="cnt-ansmark">0</span> Ans & Marked</div>
+                    </div>
 
-                <aside class="palette-card" aria-label="Question palette">
-                    <h2>Question Palette</h2>
-                    <div class="palette-grid" id="questionPalette"></div>
-                    <div class="palette-legend">
-                        <span><i class="legend answered"></i>Answered</span>
-                        <span><i class="legend not-answered"></i>Not Answered</span>
-                        <span><i class="legend review"></i>Marked For Review</span>
-                        <span><i class="legend not-visited"></i>Not Visited</span>
+                    <div class="palette-grid-wrapper">
+                        <h4>Question Palette</h4>
+                        <div id="palette-grid" class="palette-grid"></div>
                     </div>
-                </aside>
+
+                    <button id="btn-submit-exam" class="btn btn-primary btn-submit-test" style="background: #198754;">Final Submit Exam</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Result Screen -->
+        <section id="screen-result" class="screen hidden">
+            <div class="container my-5" style="display: flex; justify-content: center;">
+                <div class="feature-card" style="width: 100%; max-width: 700px; padding: 40px; text-align: center;">
+                    <i class="fa-solid fa-trophy text-primary" style="font-size: 4rem; margin-bottom: 20px;"></i>
+                    <h2 class="mb-4" style="font-size: 2rem;">Examination Result</h2>
+                    
+                    <h3 id="res-name" class="text-primary mb-2" style="font-size: 1.5rem;">Candidate Name</h3>
+                    <p id="res-exam" class="text-muted mb-2">Exam Name</p>
+                    <p id="res-date" class="text-muted mb-4" style="font-size: 0.95rem;">Date</p>
+
+                    <div style="background: var(--page); padding: 30px; border-radius: 16px; margin-bottom: 30px; border: 1px solid var(--line);">
+                        <h1 id="res-percent" style="font-size: 4rem; color: var(--primary); margin-bottom: 10px;">0%</h1>
+                        <h3 id="res-status" style="font-size: 1.5rem; letter-spacing: 2px;" class="res-status">STATUS</h3>
+                    </div>
+
+                    <div class="stats-strip" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 30px; margin-top: 0; gap: 15px;">
+                        <div style="background: white; padding: 15px; border-radius: 12px; border: 1px solid var(--line);"><small class="text-muted">Score</small><br><strong id="res-marks" style="font-size: 1.2rem; color: var(--primary);">0/0</strong></div>
+                        <div style="background: white; padding: 15px; border-radius: 12px; border: 1px solid var(--line);"><small class="text-muted">Correct</small><br><strong id="res-correct" style="color: #10804f; font-size: 1.2rem;">0</strong></div>
+                        <div style="background: white; padding: 15px; border-radius: 12px; border: 1px solid var(--line);"><small class="text-muted">Wrong</small><br><strong id="res-wrong" style="color: #dc3545; font-size: 1.2rem;">0</strong></div>
+                        <div style="background: white; padding: 15px; border-radius: 12px; border: 1px solid var(--line);"><small class="text-muted">Skipped</small><br><strong id="res-skipped" style="font-size: 1.2rem; color: var(--text-main);">0</strong></div>
+                    </div>
+
+                    <div id="cert-area" class="hidden mb-4">
+                        <button id="btn-cert" class="btn btn-secondary w-full" style="width: 100%; padding: 14px; font-size: 1.1rem;"><i class="fa-solid fa-certificate"></i> Download Certificate</button>
+                    </div>
+
+                    <button class="btn btn-outline" style="width: 100%; padding: 14px; font-size: 1.1rem;" onclick="window.location.reload()">Return to Dashboard</button>
+                </div>
             </div>
         </section>
     </main>
 
-    <script src="quiz.js"></script>
+    <footer class="site-footer" id="main-footer" style="background: linear-gradient(135deg, #001a4d 0%, #002b7f 100%); padding: 40px 20px 20px;">
+        <div class="footer-top" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding-bottom: 30px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+            <div class="footer-col brand-col">
+                <div class="footer-logo" style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <img src="Images/bihar-logo.png" alt="नमोहिंद" style="width: 50px; height: auto;">
+                    <h2 style="color: #ffffff; font-size: 1.4rem; margin: 0; line-height: 1.2;">नमोहिंद | Namhohind<br><small style="font-size: 0.95rem; color: #FFD54F; font-weight: 500;">बिहार परीक्षा तैयारी मंच</small></h2>
+                </div>
+                <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; max-width: 350px;">बिहार एवं सरकारी प्रतियोगी परीक्षाओं की सम्पूर्ण तैयारी का डिजिटल मंच।</p>
+                <p style="margin-top: 15px; color: #FFD54F; font-weight: 600; font-size: 1rem;">Created By: Rahul Kumar</p>
+            </div>
+            <div class="footer-col links-col">
+                <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 20px; position: relative; padding-bottom: 8px;">Quick Links<span style="content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background: #FFD54F; border-radius: 2px;"></span></h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+                    <li><a href="index.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">🏠 Home</a></li>
+                    <li><a href="bihar-gk-page1.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">📚 Bihar GK</a></li>
+                    <li><a href="all-govt-exams.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">🏛️ All Govt Exams</a></li>
+                    <li><a href="current-affairs.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">📰 Current Affairs</a></li>
+                    <li><a href="quiz.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">📝 Quiz</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 20px; position: relative; padding-bottom: 8px;">Contact Us<span style="content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background: #FFD54F; border-radius: 2px;"></span></h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; color: #cbd5e1; font-size: 0.95rem;">
+                    <li style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-envelope" style="color: #FFD54F; font-size: 1.1rem;"></i> rquiztak@gmail.com</li>
+                    <li style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-location-dot" style="color: #FFD54F; font-size: 1.1rem;"></i> Patna, Bihar, India</li>
+                </ul>
+                <h3 style="color: #ffffff; font-size: 1.1rem; margin-top: 25px; margin-bottom: 15px;">Connect With Us</h3>
+                <div class="social-links" aria-label="Social media links" style="display: flex; gap: 12px;">
+                    <a href="https://www.youtube.com/@IndiaCaseDiary" target="_blank" rel="noopener" aria-label="YouTube" class="brand-social-btn yt"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/rahul.sow.370/" target="_blank" rel="noopener" aria-label="Facebook" class="brand-social-btn fb"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/si__rahulkumarsaw/" target="_blank" rel="noopener" aria-label="Instagram" class="brand-social-btn ig"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom" style="max-width: 1200px; margin: 0 auto; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; color: #94a3b8; font-size: 0.9rem;">
+            <p style="margin: 0;">&copy; 2026 नमोहिंद | Namhohind</p>
+            <p style="margin: 0; text-align: right;">Founder & Developer: <span style="color: #ffffff; font-weight: 500;">Rahul Kumar</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "Rahul Kumar",
                 category: "Bihar GK",
                 rating: 5,
-                comment: "Excellent platform for BPSC and Bihar Police preparation. The mock tests are very relevant.",
+                comment: "Excellent platform for Bihar GK preparation. The questions are very relevant.",
                 date: new Date(Date.now() - 86400000 * 2).toLocaleString(),
                 pinned: true,
                 hidden: false
@@ -66,17 +66,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "Priya Sharma",
                 category: "Current Affairs",
                 rating: 4,
-                comment: "Very good daily updates. Namhohind AI is also an amazing beta feature!",
+                comment: "Very good daily updates. Extremely helpful for exams!",
                 date: new Date(Date.now() - 86400000).toLocaleString(),
                 pinned: false,
                 hidden: false
             },
             {
                 id: Date.now() + 3,
-                name: "Amit Singh",
-                category: "BPSC",
+                name: "Sunil Verma",
+                category: "PDF Notes",
                 rating: 5,
-                comment: "The UI is so clean and easy to use on mobile. Loved the question palette.",
+                comment: "The UI is so clean and easy to use on mobile. Loved the PDF notes section.",
                 date: new Date().toLocaleString(),
                 pinned: false,
                 hidden: false

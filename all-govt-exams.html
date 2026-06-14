@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Govt Exam Preparation | नमोहिंद - Namhohind</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        .exam-card-premium {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+        .exam-card-premium:hover {
+            transform: translateY(-10px);
+            border-color: #FFD54F;
+            box-shadow: 0 10px 25px rgba(11, 61, 145, 0.2);
+        }
+        .exam-card-premium .exam-category {
+            font-size: 0.8rem;
+            color: #ffffff;
+            background: var(--primary);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .exam-card-premium .exam-title {
+            font-size: 1.3rem;
+            color: #0b192c;
+            font-weight: 800;
+            margin: 0 0 5px 0;
+        }
+        .exam-card-premium .exam-desc {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin: 0;
+            line-height: 1.4;
+        }
+        .exam-card-premium .exam-btn {
+            margin-top: 10px;
+            color: #0b3d91;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: rgba(11, 61, 145, 0.05);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .exam-card-premium:hover .exam-btn {
+            background: #0b3d91;
+            color: #ffffff;
+        }
+        .future-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+        .feature-pill {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--primary);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        .feature-pill:hover {
+            background: var(--blue-100);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        /* New Architecture Styles */
+        .active-premium-card {
+            border-color: #FFD54F !important;
+            box-shadow: 0 0 15px rgba(255, 213, 79, 0.2) !important;
+        }
+        .active-premium-card:hover {
+            box-shadow: 0 10px 25px rgba(255, 213, 79, 0.4) !important;
+        }
+        .active-badge {
+            background: #FFD54F !important;
+            color: #0b192c !important;
+            box-shadow: 0 2px 8px rgba(255, 213, 79, 0.4);
+        }
+        
+        .locked-card {
+            background: #f8fafc !important;
+            cursor: pointer;
+            opacity: 0.9;
+        }
+        .locked-card:hover {
+            border-color: #94a3b8 !important;
+            transform: translateY(-5px) !important;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08) !important;
+        }
+        .locked-badge {
+            background: #64748b !important;
+            color: #ffffff !important;
+        }
+        .locked-btn {
+            background: #e2e8f0 !important;
+            color: #64748b !important;
+        }
+        
+        .exam-section-title {
+            font-size: 1.8rem; color: #0b192c; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 60px; margin-bottom: 30px; display: flex; align-items: center; gap: 12px; font-weight: 800;
+        }
+        .sub-section-title {
+            font-size: 1.3rem; color: #1e293b; margin-top: 30px; margin-bottom: 20px; padding-left: 12px; border-left: 4px solid var(--primary); font-weight: 700;
+        }
+        
+        .future-modules-list {
+            display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; margin-top: 15px; width: 100%;
+        }
+        .future-modules-list span {
+            font-size: 0.65rem; background: #ffffff; color: #475569; padding: 4px 8px; border-radius: 4px; border: 1px solid #e2e8f0; font-weight: 600;
+        }
+        .locked-card .future-modules-list span { background: #f1f5f9; }
+
+        /* Modal Styles */
+        .cs-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 25, 44, 0.85); z-index: 9999; display: none; justify-content: center; align-items: center; backdrop-filter: blur(4px); }
+        .cs-modal-box { background: white; padding: 40px; border-radius: 20px; max-width: 450px; text-align: center; border-top: 6px solid #FFD54F; box-shadow: 0 20px 40px rgba(0,0,0,0.3); transform: translateY(20px); animation: modalSlide 0.3s forwards; margin: 20px; }
+        @keyframes modalSlide { to { transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Namhohind Bihar GK home">
+            <img src="Images/bihar-logo.png" alt="नमोहिंद">
+            <span><strong>नमोहिंद | Namhohind</strong><small>बिहार परीक्षा तैयारी मंच</small></span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html">🏠 Home</a>
+            <a href="bihar-gk-page1.html">📚 Bihar GK</a>
+            <a class="active" href="all-govt-exams.html">🏛️ All Govt Exams</a>
+            <a href="current-affairs.html">📰 Current Affairs</a>
+            <a href="quiz.html">📝 Quiz</a>
+            <a href="feedback.html">⭐ Reviews & Feedback</a>
+            <a href="quiz.html" class="header-cta">Start Practice</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div>
+                <p class="kicker">One Platform for Complete Preparation</p>
+                <h1>Government Exam Portal</h1>
+                <p>Explore comprehensive preparation modules for State and Central government examinations.</p>
+            </div>
+            <img src="Images/bihar-logo.png" alt="Exams icon">
+        </section>
+
+        <!-- Main Exams Layout -->
+        <section style="background: #ffffff; padding: 20px 20px 80px;">
+            <div style="max-width: 1200px; margin: 0 auto;">
+
+                <!-- ============================================== -->
+                <!-- 1. ACTIVE CATEGORY: BIHAR EXAMS -->
+                <!-- ============================================== -->
+                <h2 class="exam-section-title"><i class="fa-solid fa-map-location-dot" style="color: var(--primary);"></i> Bihar Government Exams</h2>
+                <div class="card-grid four-col">
+                    <!-- Active Cards -->
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">BPSC CCE</h3><p class="exam-desc">Combined Competitive Exam</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">BPSSC SI</h3><p class="exam-desc">Sub Inspector Recruitment</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">CSBC Constable</h3><p class="exam-desc">Police Constable</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">Bihar Police Driver</h3><p class="exam-desc">Driver Constable</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">Bihar Fireman</h3><p class="exam-desc">Fire Services Recruitment</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">BPSC TRE</h3><p class="exam-desc">Teacher Recruitment Exam</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">BPSC Asst. Professor</h3><p class="exam-desc">Higher Education Dept</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">BPSC AE</h3><p class="exam-desc">Assistant Engineer</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">BSSC CGL</h3><p class="exam-desc">Graduate Level Posts</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">BSSC Inter Level</h3><p class="exam-desc">12th Pass Recruitment</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">BSSC JE</h3><p class="exam-desc">Junior Engineer</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">BTSC Medical Officer</h3><p class="exam-desc">Health Department</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">BTSC Paramedical</h3><p class="exam-desc">Paramedical Staff</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">Bihar Amin</h3><p class="exam-desc">Revenue Department</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">Agri Coordinator</h3><p class="exam-desc">Agriculture Department</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">Bihar Auditor</h3><p class="exam-desc">Panchayati Raj Dept</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">ASO</h3><p class="exam-desc">Assistant Section Officer</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">Judicial Services</h3><p class="exam-desc">Civil Judge</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">Forest Guard</h3><p class="exam-desc">Environment & Forest</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                    <a href="quiz.html" class="exam-card-premium active-premium-card"><span class="exam-category active-badge"><i class="fa-solid fa-bolt"></i> AVAILABLE NOW</span><div><h3 class="exam-title">MVI</h3><p class="exam-desc">Motor Vehicle Inspector</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn">Start Preparation ➡</span></a>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 2. CENTRAL GOVERNMENT EXAMS -->
+                <!-- ============================================== -->
+                <h2 class="exam-section-title"><i class="fa-solid fa-building-columns" style="color: var(--primary);"></i> Central Government Exams</h2>
+                
+                <h3 class="sub-section-title">UPSC (Union Public Service Commission)</h3>
+                <div class="card-grid four-col">
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">UPSC CSE (IAS)</h3><p class="exam-desc">Civil Services Examination</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">UPSC IFS</h3><p class="exam-desc">Indian Forest Service</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">UPSC CDS</h3><p class="exam-desc">Combined Defence Services</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">UPSC NDA</h3><p class="exam-desc">National Defence Academy</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">UPSC CAPF</h3><p class="exam-desc">Central Armed Police Forces</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">EPFO EO/AO</h3><p class="exam-desc">Enforcement Officer</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                </div>
+
+                <h3 class="sub-section-title">SSC (Staff Selection Commission)</h3>
+                <div class="card-grid four-col">
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">SSC CGL</h3><p class="exam-desc">Combined Graduate Level</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">SSC CHSL</h3><p class="exam-desc">Combined Higher Secondary</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">SSC MTS</h3><p class="exam-desc">Multi Tasking Staff</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">SSC GD Constable</h3><p class="exam-desc">General Duty Constable</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">SSC CPO</h3><p class="exam-desc">Central Police Organization</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">SSC JE</h3><p class="exam-desc">Junior Engineer</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">SSC Stenographer</h3><p class="exam-desc">Grade C & D</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                </div>
+
+                <h3 class="sub-section-title">Railway (RRB)</h3>
+                <div class="card-grid four-col">
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">RRB NTPC</h3><p class="exam-desc">Non-Technical Popular Categories</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">RRB Group D</h3><p class="exam-desc">Level 1 Posts</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">RRB ALP</h3><p class="exam-desc">Assistant Loco Pilot</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">RRB Technician</h3><p class="exam-desc">Technical Posts</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">RRB JE</h3><p class="exam-desc">Junior Engineer</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                </div>
+
+                <h3 class="sub-section-title">Banking & Insurance</h3>
+                <div class="card-grid four-col">
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">SBI PO</h3><p class="exam-desc">Probationary Officer</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">SBI Clerk</h3><p class="exam-desc">Junior Associates</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">IBPS PO</h3><p class="exam-desc">Probationary Officer</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">IBPS Clerk</h3><p class="exam-desc">Clerical Cadre</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">RBI Assistant</h3><p class="exam-desc">Reserve Bank Assistant</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">RBI Grade B</h3><p class="exam-desc">Officer Grade B</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                </div>
+
+                <h3 class="sub-section-title">Defence</h3>
+                <div class="card-grid four-col">
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">Agniveer Army</h3><p class="exam-desc">Indian Army Recruitment</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">Agniveer Navy</h3><p class="exam-desc">Indian Navy Recruitment</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">Agniveer Air Force</h3><p class="exam-desc">Indian Air Force</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">Indian Coast Guard</h3><p class="exam-desc">Coast Guard Navik/Yantrik</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">Territorial Army</h3><p class="exam-desc">TA Officer Recruitment</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 3. STATE PSC EXAMS -->
+                <!-- ============================================== -->
+                <h2 class="exam-section-title"><i class="fa-solid fa-map" style="color: var(--primary);"></i> State PSC Exams</h2>
+                <div class="card-grid four-col">
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">APPSC</h3><p class="exam-desc">Andhra Pradesh PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">APPSC</h3><p class="exam-desc">Arunachal Pradesh PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">APSC</h3><p class="exam-desc">Assam PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">CGPSC</h3><p class="exam-desc">Chhattisgarh PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">GPSC</h3><p class="exam-desc">Goa PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">GPSC</h3><p class="exam-desc">Gujarat PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">HPSC</h3><p class="exam-desc">Haryana PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">HPPSC</h3><p class="exam-desc">Himachal Pradesh PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">JKPSC</h3><p class="exam-desc">Jammu & Kashmir PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">JPSC</h3><p class="exam-desc">Jharkhand PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">KPSC</h3><p class="exam-desc">Karnataka PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">Kerala PSC</h3><p class="exam-desc">Kerala PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">MPPSC</h3><p class="exam-desc">Madhya Pradesh PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">MPSC</h3><p class="exam-desc">Maharashtra PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">MPSC</h3><p class="exam-desc">Manipur PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">MPSC</h3><p class="exam-desc">Meghalaya PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">MPSC</h3><p class="exam-desc">Mizoram PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">NPSC</h3><p class="exam-desc">Nagaland PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">OPSC</h3><p class="exam-desc">Odisha PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">PPSC</h3><p class="exam-desc">Punjab PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">RPSC</h3><p class="exam-desc">Rajasthan PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">SPSC</h3><p class="exam-desc">Sikkim PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">TNPSC</h3><p class="exam-desc">Tamil Nadu PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">TSPSC</h3><p class="exam-desc">Telangana PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">TPSC</h3><p class="exam-desc">Tripura PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">UPPSC</h3><p class="exam-desc">Uttar Pradesh PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">UKPSC</h3><p class="exam-desc">Uttarakhand PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">WBPSC</h3><p class="exam-desc">West Bengal PSC</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Syllabus</span><span>Pattern</span><span>Mock Tests</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 4. SPECIAL CATEGORIES -->
+                <!-- ============================================== -->
+                <h2 class="exam-section-title"><i class="fa-solid fa-star" style="color: var(--primary);"></i> Special Categories</h2>
+                
+                <h3 class="sub-section-title">Teaching Exams</h3>
+                <div class="card-grid four-col">
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">CTET</h3><p class="exam-desc">Central Teacher Eligibility Test</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">STET</h3><p class="exam-desc">State Teacher Eligibility Test</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">KVS</h3><p class="exam-desc">Kendriya Vidyalaya Sangathan</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">NVS</h3><p class="exam-desc">Navodaya Vidyalaya Samiti</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">DSSSB</h3><p class="exam-desc">Teacher Recruitment</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                </div>
+
+                <h3 class="sub-section-title">Police Exams</h3>
+                <div class="card-grid four-col">
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">Delhi Police</h3><p class="exam-desc">Constable & Head Constable</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">CISF</h3><p class="exam-desc">Central Industrial Security</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">CRPF</h3><p class="exam-desc">Central Reserve Police</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">BSF</h3><p class="exam-desc">Border Security Force</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">ITBP</h3><p class="exam-desc">Indo-Tibetan Border Police</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">SSB</h3><p class="exam-desc">Sashastra Seema Bal</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                </div>
+
+                <h3 class="sub-section-title">Judiciary Exams</h3>
+                <div class="card-grid four-col">
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">Civil Judge</h3><p class="exam-desc">State Civil Judge Exams</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">APO</h3><p class="exam-desc">Assistant Prosecution Officer</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">Judicial Services</h3><p class="exam-desc">Higher Judicial Services</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                </div>
+
+                <h3 class="sub-section-title">Engineering Exams</h3>
+                <div class="card-grid four-col">
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">SSC JE</h3><p class="exam-desc">Junior Engineer</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">RRB JE</h3><p class="exam-desc">Railway Junior Engineer</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">PSU Exams</h3><p class="exam-desc">Engineering Recruitment</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">State AE</h3><p class="exam-desc">Assistant Engineer Exams</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                </div>
+
+                <h3 class="sub-section-title">Medical Exams</h3>
+                <div class="card-grid four-col">
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">AIIMS</h3><p class="exam-desc">AIIMS Recruitment</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">NORCET</h3><p class="exam-desc">Nursing Officer Exam</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">ESIC</h3><p class="exam-desc">ESIC Recruitment</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">State MO</h3><p class="exam-desc">Medical Officer</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                </div>
+
+                <h3 class="sub-section-title">Agriculture Exams</h3>
+                <div class="card-grid four-col">
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">Agriculture Officer</h3><p class="exam-desc">State Agriculture Dept</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">Agri Coordinator</h3><p class="exam-desc">Coordination Posts</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                    <div class="exam-card-premium locked-card" onclick="openComingSoonModal()"><span class="exam-category locked-badge"><i class="fa-solid fa-lock"></i> COMING SOON</span><div><h3 class="exam-title">Field Officer</h3><p class="exam-desc">Agriculture Field Officer</p></div><div class="future-modules-list"><span>Overview</span><span>Eligibility</span><span>Age Limit</span><span>Syllabus</span><span>Exam Pattern</span><span>Study Material</span><span>Question Bank</span><span>Previous Year Papers</span><span>Mock Tests</span><span>Current Affairs</span></div><span class="exam-btn locked-btn">Explore 🔒</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coming Soon Modal -->
+        <div id="csModal" class="cs-modal-overlay">
+            <div class="cs-modal-box">
+                <i class="fa-solid fa-lock" style="font-size: 3.5rem; color: #FFD54F; margin-bottom: 20px;"></i>
+                <h2 style="color: #0b192c; font-size: 1.8rem; margin-bottom: 15px; font-weight: 800;">Coming Soon</h2>
+                <p style="color: #64748b; font-size: 1.05rem; margin-bottom: 25px; line-height: 1.6;">This section is currently under development.<br><br><strong style="color: #0b192c;">Bihar Exams Preparation is available now.</strong><br><br>More categories will be launched soon.</p>
+                <button onclick="closeComingSoonModal()" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1.1rem; border-radius: 8px;">Got it!</button>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" style="background: linear-gradient(135deg, #001a4d 0%, #002b7f 100%); padding: 40px 20px 20px;">
+        <div class="footer-top" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding-bottom: 30px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+            <div class="footer-col brand-col">
+                <div class="footer-logo" style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <img src="Images/bihar-logo.png" alt="नमोहिंद" style="width: 50px; height: auto;">
+                    <h2 style="color: #ffffff; font-size: 1.4rem; margin: 0; line-height: 1.2;">नमोहिंद | Namhohind<br><small style="font-size: 0.95rem; color: #FFD54F; font-weight: 500;">बिहार परीक्षा तैयारी मंच</small></h2>
+                </div>
+                <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; max-width: 350px;">बिहार एवं सरकारी प्रतियोगी परीक्षाओं की सम्पूर्ण तैयारी का डिजिटल मंच।</p>
+                <p style="margin-top: 15px; color: #FFD54F; font-weight: 600; font-size: 1rem;">Created By: Rahul Kumar</p>
+            </div>
+            <div class="footer-col links-col">
+                <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 20px; position: relative; padding-bottom: 8px;">Quick Links<span style="content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background: #FFD54F; border-radius: 2px;"></span></h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+                    <li><a href="index.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">🏠 Home</a></li>
+                    <li><a href="bihar-gk-page1.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">📚 Bihar GK</a></li>
+                    <li><a href="all-govt-exams.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">🏛️ All Govt Exams</a></li>
+                    <li><a href="current-affairs.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">📰 Current Affairs</a></li>
+                    <li><a href="quiz.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">📝 Quiz</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 20px; position: relative; padding-bottom: 8px;">Contact Us<span style="content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background: #FFD54F; border-radius: 2px;"></span></h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; color: #cbd5e1; font-size: 0.95rem;">
+                    <li style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-envelope" style="color: #FFD54F; font-size: 1.1rem;"></i> rquiztak@gmail.com</li>
+                    <li style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-location-dot" style="color: #FFD54F; font-size: 1.1rem;"></i> Patna, Bihar, India</li>
+                </ul>
+                <h3 style="color: #ffffff; font-size: 1.1rem; margin-top: 25px; margin-bottom: 15px;">Connect With Us</h3>
+                <div class="social-links" aria-label="Social media links" style="display: flex; gap: 12px;">
+                    <a href="https://www.youtube.com/@IndiaCaseDiary" target="_blank" rel="noopener" aria-label="YouTube" class="brand-social-btn yt"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/rahul.sow.370/" target="_blank" rel="noopener" aria-label="Facebook" class="brand-social-btn fb"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/si__rahulkumarsaw/" target="_blank" rel="noopener" aria-label="Instagram" class="brand-social-btn ig"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom" style="max-width: 1200px; margin: 0 auto; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; color: #94a3b8; font-size: 0.9rem;">
+            <p style="margin: 0;">&copy; 2026 नमोहिंद | Namhohind</p>
+            <p style="margin: 0; text-align: right;">Founder & Developer: <span style="color: #ffffff; font-weight: 500;">Rahul Kumar</span></p>
+        </div>
+    </footer>
+
+    <!-- Modal Script -->
+    <script>
+        function openComingSoonModal() {
+            document.getElementById('csModal').style.display = 'flex';
+        }
+        function closeComingSoonModal() {
+            document.getElementById('csModal').style.display = 'none';
+        }
+        window.onclick = function(event) {
+            let modal = document.getElementById('csModal');
+            if (event.target == modal) { closeComingSoonModal(); }
+        }
+    </script>
+</body>
+</html>
